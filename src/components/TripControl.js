@@ -8,7 +8,8 @@ class TripControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisible: false
+      formVisible: false,
+      mainTripList: []
     };
   }
 
@@ -18,14 +19,19 @@ class TripControl extends React.Component {
     }));
   }
 
+  handleAddingNewTripToList = (newTrip) => {
+    const newMainTripList = this.state.mainTripList.concat(newTrip);
+    this.setState({mainTripList: newMainTripList, formVisible: false});
+  }
+
   render() {
     let visibleState = null;
     let btnText = null;
     if(this.state.formVisible){
-      visibleState = <NewTripForm />
+      visibleState = <NewTripForm onNewTripCreation={this.handleAddingNewTripToList} />
       btnText = "Cancel";
     } else {
-      visibleState = <TripList />
+      visibleState = <TripList tripList={this.state.mainTripList} />
       btnText = "Add Trip";
     }
     return (

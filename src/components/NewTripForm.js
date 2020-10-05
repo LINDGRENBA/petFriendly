@@ -1,16 +1,13 @@
 //need access to list of trips so it can add new trips to the list
 import React from 'react';
 import {v4} from 'uuid';
+import PropTypes from 'prop-types';
 
 function NewTicketForm(props){
 
   function handleNewTripFormSubmission(event){
     event.preventDefault();
-    console.log(event.target.destination.value);
-    console.log(event.target.departureDate.value);
-    console.log(event.target.returnDate.value);
-    console.log(event.target.petName.value);
-    console.log(event.target.notes.value);
+    props.onNewTripCreation({destination: event.target.destination.value,  departureDate: event.target.departureDate.value,  returnDate: event.target.returnDate.value,  petName: event.target.petName.value,  notes: event.target.notes.value, id: v4()});
   }
 
   return(
@@ -55,5 +52,9 @@ function NewTicketForm(props){
     </React.Fragment>
   );
 }
+
+NewTicketForm.propTypes = {
+  onNewTripCreation: PropTypes.func
+};
 
 export default NewTicketForm;
