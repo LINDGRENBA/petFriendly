@@ -16,9 +16,16 @@ class TripControl extends React.Component {
   }
 
   handleClick = () => {  //using arrow function allows inner function to access props
-    this.setState(prevState => ({
-      formVisible: !prevState.formVisible
-    }));
+    if(this.state.selectedTrip != null){
+      this.setState({
+        formVisible: false,
+        selectedTrip: null
+      });
+    } else {
+      this.setState(prevState => ({
+        formVisible: !prevState.formVisible
+      }));
+    }
   }
 
   handleAddingNewTripToList = (newTrip) => {  //takes newtrip object from submitted form, adds to maintriplist array
