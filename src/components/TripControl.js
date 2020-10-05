@@ -21,7 +21,8 @@ class TripControl extends React.Component {
     if(this.state.selectedTrip != null){
       this.setState({
         formVisible: false,
-        selectedTrip: null
+        selectedTrip: null,
+        editing: false
       });
     } else {
       this.setState(prevState => ({
