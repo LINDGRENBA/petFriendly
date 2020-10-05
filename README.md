@@ -57,6 +57,13 @@ This app will make it easier for pet owners to travel with their pets. Searching
 <br>
 <br>
 
+### <p align = "center"> **Known Bugs**
+| Issue & Message | Solution |
+| ----- | ----- | 
+| When clicking 'Trip Details' button, page is not re-directed to TripDetails component |  |
+|  |  |
+|  |  |
+
 ## <p align = "center">  <u>**Process and Decision Making**</u>
 1. Read Documentation, decide which version of React to use
 2. Will use React with Redux + ASP.NET Core 

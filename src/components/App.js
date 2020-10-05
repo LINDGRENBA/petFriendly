@@ -3,7 +3,6 @@ import './../App.css';
 import './NavMenu';
 import NavMenu from './NavMenu';
 import TripControl from './TripControl';
-import TripList from './TripList';
 
 function App() {
   return (
