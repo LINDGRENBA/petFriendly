@@ -1,4 +1,4 @@
-import formVisibleReducer from '../..reducers/form-visible-reducer';
+import formVisibleReducer from '../../reducers/form-visible-reducer';
 
 describe('formVisibleReducer', () => {
 
