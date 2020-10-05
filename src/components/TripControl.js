@@ -7,6 +7,7 @@ import EditTripForm from './EditTripForm';
 import {connect} from 'react-redux';
 // import Trip from './Trip';
 import PropTypes from 'prop-types';
+import * as a from './../actions';
 
 class TripControl extends React.Component {
 
@@ -30,9 +31,7 @@ class TripControl extends React.Component {
       });
     } else {
       const {dispatch} = this.props;
-      const action = {
-        type: 'TOGGLE_FORM'
-      }
+      const action = a.toggleForm();
       dispatch(action);
     }
   }
@@ -44,21 +43,10 @@ class TripControl extends React.Component {
 
   handleAddingNewTripToList = (newTrip) => {
     const {dispatch} = this.props;
-    const {id, destination, departureDate, returnDate, petName, notes} = newTrip;
-    const action = {
-      type: 'ADD_TRIP',
-      destination: destination,
-      departureDate: departureDate,
-      returnDate: returnDate,
-      petName: petName,
-      notes: notes,
-      id: id
-    }
+    const action = a.addTrip(newTrip);
     dispatch(action);
     // this.setState({formVisible: false});
-    const actionToggle = {
-      type: 'TOGGLE_FORM'
-    }
+    const actionToggle = a.toggleForm();
     dispatch(actionToggle);
   }
 
@@ -69,16 +57,7 @@ class TripControl extends React.Component {
 
   handleEditingTrip = (tripToEdit) => {
     const {dispatch} = this.props;
-    const {id, destination, departureDate, returnDate, petName, notes} = tripToEdit;
-    const action = {
-      type: 'ADD_TRIP',
-      destination: destination,
-      departureDate: departureDate,
-      returnDate: returnDate,
-      petName: petName,
-      notes: notes,
-      id: id
-    }
+    const action = a.addTrip(tripToEdit);
     dispatch(action);
     this.setState({
       editing: false,
@@ -88,10 +67,7 @@ class TripControl extends React.Component {
 
   handleDeletingTrip = (id) => {
     const {dispatch} = this.props;
-    const action = {
-      type: 'DELETE_TRIP',
-      id: id
-    }
+    const action = a.deleteTrip(id);
     dispatch(action);
     this.setState({
       selectedTrip: null
