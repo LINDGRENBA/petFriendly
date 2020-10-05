@@ -92,7 +92,8 @@ October 4th 2020: - Get record from Capstone2 pet friendly project
 
 October 5th 2020: 
 1. 8:40 - Start new project using simple create-react-app command
-2. 8:40 to TBD: Set up new project
+2. 8:40 to 10:00: Set up new project
+3. 
 
 
 ## <p align = "center"> Documentation and Resources used for this project

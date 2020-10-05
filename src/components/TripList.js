@@ -1,5 +1,6 @@
 import React from 'react';
 import Trip from './Trip';
+//needs access to trip list so it can show the list
 
 const mainTripsList = [
   {

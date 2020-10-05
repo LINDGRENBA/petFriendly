@@ -2,6 +2,7 @@ import React from 'react';
 import './../App.css';
 import './NavMenu';
 import NavMenu from './NavMenu';
+import TripControl from './TripControl';
 import TripList from './TripList';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       <h1>Pet Friendly</h1>
       <p>An app to take the stress out of traveling with your pet.</p>
 
-      <TripList />
+      <TripControl />
     </React.Fragment>
   );
 }
