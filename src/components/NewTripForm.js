@@ -42,7 +42,7 @@ function NewTicketForm(props){
           placeholder='Gemma'
         />
         <label>Trip Notes:</label>
-        <input 
+        <textarea
           type='text'
           name='notes'
           placeholder='Remember meds for Gemma'

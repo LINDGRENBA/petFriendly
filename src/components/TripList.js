@@ -25,6 +25,9 @@ function TripList(props){
         <Trip
         destination={trip.destination}
         petName={trip.petName}
+        departureDate={trip.departureDate}
+        returnDate={trip.returnDate}
+        notes={trip.notes}
         key={index} />
       )}
     </React.Fragment>

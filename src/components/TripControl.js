@@ -19,7 +19,7 @@ class TripControl extends React.Component {
     }));
   }
 
-  handleAddingNewTripToList = (newTrip) => {
+  handleAddingNewTripToList = (newTrip) => {  //takes newtrip object from submitted form, adds to maintriplist array
     const newMainTripList = this.state.mainTripList.concat(newTrip);
     this.setState({mainTripList: newMainTripList, formVisible: false});
   }
