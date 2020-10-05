@@ -2,6 +2,7 @@ import React from 'react';
 // import Trip from './Trip';
 import TripList from './TripList';
 import NewTripForm from './NewTripForm';
+import TripDetails from './TripDetails';
 
 class TripControl extends React.Component {
 
@@ -25,14 +26,23 @@ class TripControl extends React.Component {
     this.setState({mainTripList: newMainTripList, formVisible: false});
   }
 
+  handleSelectingTrip = (id) => {
+    const selectedTrip = this.state.mainTripList.filter(trip => trip.id === id)[0];
+    this.setState({selectedTrip: selectedTrip});
+  }
+
   render() {
     let visibleState = null;
     let btnText = null;
-    if(this.state.formVisible){
+
+    if(this.state.selectedTrip != null){
+      visibleState = <TripDetails trip={this.state.selectedTrip} />
+      btnText = "Back";
+    } else if(this.state.formVisible){
       visibleState = <NewTripForm onNewTripCreation={this.handleAddingNewTripToList} />
       btnText = "Cancel";
     } else {
-      visibleState = <TripList tripList={this.state.mainTripList} />
+      visibleState = <TripList tripList={this.state.mainTripList} onTripSelection={this.handleSelectingTrip} />
       btnText = "Add Trip";
     }
     return (

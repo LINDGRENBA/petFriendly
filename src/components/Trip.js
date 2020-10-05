@@ -14,6 +14,7 @@ function Trip(props){
         <p>Notes:</p>
         <p>{props.notes}</p>
       </div>
+      <button onClick={() => props.whenDetailsButtonClicked(props.id)}>Trip Details</button>
     </React.Fragment>
   )
 }
@@ -21,9 +22,11 @@ function Trip(props){
 Trip.propTypes = {
   destination: PropTypes.string.isRequired,
   petName: PropTypes.string,
-  departureDate: PropTypes.instanceOf(Date),
-  returnDate: PropTypes.instanceOf(Date),
-  notes: PropTypes.string
+  departureDate: PropTypes.string,
+  returnDate: PropTypes.string,
+  notes: PropTypes.string,
+  id: PropTypes.string,
+  whenDetailsButtonClicked: PropTypes.func
 };
 
 export default Trip;
