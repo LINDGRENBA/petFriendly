@@ -1,3 +1,18 @@
 export default (state = {}, action) => {
-  return state;
+  const {destination, departureDate, returnDate, petName, notes, id} = action;
+  switch(action.type){
+    case 'ADD_TICKET':
+      return Object.assign({}, state, {
+        [id] : {
+          destination: destination,
+          departureDate: departureDate,
+          returnDate: returnDate,
+          petName: petName,
+          notes: notes,
+          id: id
+        }
+      });
+    default:  
+      return state;
+  }
 };
