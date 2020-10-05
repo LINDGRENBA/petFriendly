@@ -3,6 +3,26 @@ import tripListReducer from '../../reducers/trip-list-reducer';
 describe('tripListReducer', () => {
 
   let action;
+
+  const currentState = {
+    1: {
+      destination: "Turkey",
+      departureDate: "2020-10-06",
+      returnDate: "2020-10-07",
+      petName: "Gemma",
+      notes: "Remember to bring Mr. Bear",
+      id: 1
+    },
+    2: {
+      destination: "Naples",
+      departureDate: "2020-12-10",
+      returnDate: "2021-01-15",
+      petName: "Cronos",
+      notes: "Bring small dog bed",
+      id: 2
+    }
+  }
+
   const tripData = {
     destination: "Turkey",
     departureDate: "2020-10-06",
@@ -19,7 +39,7 @@ describe('tripListReducer', () => {
   test('should add a new trip to the mainTripList', () => {
     const {destination, departureDate, returnDate, petName, notes, id} = tripData;
     action = {
-      type: 'ADD_TICKET',
+      type: 'ADD_TRIP',
       destination: destination,
       departureDate: departureDate,
       returnDate: returnDate,
@@ -35,6 +55,23 @@ describe('tripListReducer', () => {
         petName: petName,
         notes: notes,
         id: id
+      }
+    });
+  });
+
+  test('should delete a trip', () => {
+    action = {
+      type: 'DELETE_TRIP',
+      id: 1
+    };
+    expect(tripListReducer(currentState, action)).toEqual({
+      2: {
+        destination: "Naples",
+        departureDate: "2020-12-10",
+        returnDate: "2021-01-15",
+        petName: "Cronos",
+        notes: "Bring small dog bed",
+        id: 2
       }
     });
   });
