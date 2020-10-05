@@ -14,7 +14,7 @@ class TripControl extends React.Component {
     super(props);
     console.log(props);
     this.state = {
-      formVisible: false,
+      // formVisible: false,
       // mainTripList: [],
       selectedTrip: null,
       editing: false
@@ -24,14 +24,16 @@ class TripControl extends React.Component {
   handleClick = () => {  //using arrow function allows inner function to access props
     if(this.state.selectedTrip != null){
       this.setState({
-        formVisible: false,
+        // formVisible: false,
         selectedTrip: null,
         editing: false
       });
     } else {
-      this.setState(prevState => ({
-        formVisible: !prevState.formVisible
-      }));
+      const {dispatch} = this.props;
+      const action = {
+        type: 'TOGGLE_FORM'
+      }
+      dispatch(action);
     }
   }
 
@@ -39,11 +41,6 @@ class TripControl extends React.Component {
     console.log("Edit Achieved!");
     this.setState({editing: true});
   }
-
-  // handleAddingNewTripToList = (newTrip) => {  //takes newtrip object from submitted form, adds to maintriplist array
-  //   const newMainTripList = this.state.mainTripList.concat(newTrip);
-  //   this.setState({mainTripList: newMainTripList, formVisible: false});
-  // }
 
   handleAddingNewTripToList = (newTrip) => {
     const {dispatch} = this.props;
@@ -58,24 +55,17 @@ class TripControl extends React.Component {
       id: id
     }
     dispatch(action);
-    this.setState({formVisible: false});
+    // this.setState({formVisible: false});
+    const actionToggle = {
+      type: 'TOGGLE_FORM'
+    }
+    dispatch(actionToggle);
   }
 
   handleSelectingTrip = (id) => {
     const selectedTrip = this.props.mainTripList[id];
     this.setState({selectedTrip: selectedTrip});
   }
-
-  // handleEditingTrip = (tripToEdit) => {
-  //   const editedTripList = this.state.mainTripList
-  //     .filter(trip => trip.id !== this.state.selectedTrip.id)
-  //     .concat(tripToEdit);
-  //   this.setState({
-  //     mainTripList: editedTripList,
-  //     editing: false,
-  //     selectedTrip: null
-  //   });
-  // }
 
   handleEditingTrip = (tripToEdit) => {
     const {dispatch} = this.props;
@@ -95,14 +85,6 @@ class TripControl extends React.Component {
       selectedTrip: null
     });
   }
-
-  // handleDeletingTrip = (id) => {
-  //   const newMainTripList = this.state.mainTripList.filter(trip => trip.id !== id);
-  //   this.setState({
-  //     mainTripList: newMainTripList,
-  //     selectedTrip: null
-  //   });
-  // }
 
   handleDeletingTrip = (id) => {
     const {dispatch} = this.props;
@@ -143,12 +125,14 @@ class TripControl extends React.Component {
 }
 
 TripControl.propTypes = {
-  mainTripList: PropTypes.object
+  mainTripList: PropTypes.object,
+  formVisible: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
-    mainTripList: state
+    mainTripList: state.mainTripList,
+    formVisible: state.formVisible
   }
 }
 
