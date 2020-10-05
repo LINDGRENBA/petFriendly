@@ -3,25 +3,11 @@ import Trip from './Trip';
 import PropTypes from 'prop-types';
 //needs access to trip list so it can show the list
 
-// const mainTripsList = [
-//   {
-//     destination: "Naples",
-//     petName: "Gemma"
-//   },
-//   {
-//     destination: "California",
-//     petName: "Cronos"
-//   },
-//   {
-//     destination: "Tibet",
-//     petName: "Potato"
-//   }
-// ];
 
 function TripList(props){
   return(
     <React.Fragment>
-      {props.tripList.map((trip) => 
+      {Object.values(props.tripList).map((trip) => 
         <Trip
         whenDetailsButtonClicked = {props.onTripSelection}
         destination={trip.destination}
@@ -37,7 +23,7 @@ function TripList(props){
 }
 
 TripList.propTypes = {
-  tripList: PropTypes.array,
+  tripList: PropTypes.object,
   onTripSelection: PropTypes.func
 };
 
