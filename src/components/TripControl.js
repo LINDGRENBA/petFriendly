@@ -9,7 +9,8 @@ class TripControl extends React.Component {
     super(props);
     this.state = {
       formVisible: false,
-      mainTripList: []
+      mainTripList: [],
+      selectedTrip: null
     };
   }
 
