@@ -3,6 +3,7 @@ import React from 'react';
 import TripList from './TripList';
 import NewTripForm from './NewTripForm';
 import TripDetails from './TripDetails';
+import EditTripForm from './EditTripForm';
 
 class TripControl extends React.Component {
 
@@ -11,7 +12,8 @@ class TripControl extends React.Component {
     this.state = {
       formVisible: false,
       mainTripList: [],
-      selectedTrip: null
+      selectedTrip: null,
+      editing: false
     };
   }
 
@@ -28,6 +30,11 @@ class TripControl extends React.Component {
     }
   }
 
+  handleEditClick = () => {
+    console.log("Edit Achieved!");
+    this.setState({editing: true});
+  }
+
   handleAddingNewTripToList = (newTrip) => {  //takes newtrip object from submitted form, adds to maintriplist array
     const newMainTripList = this.state.mainTripList.concat(newTrip);
     this.setState({mainTripList: newMainTripList, formVisible: false});
@@ -36,6 +43,17 @@ class TripControl extends React.Component {
   handleSelectingTrip = (id) => {
     const selectedTrip = this.state.mainTripList.filter(trip => trip.id === id)[0];
     this.setState({selectedTrip: selectedTrip});
+  }
+
+  handleEditingTrip = (tripToEdit) => {
+    const editedTripList = this.state.mainTripList
+      .filter(trip => trip.id !== this.state.selectedTrip.id)
+      .concat(tripToEdit);
+    this.setState({
+      mainTripList: editedTripList,
+      editing: false,
+      selectedTrip: null
+    });
   }
 
   handleDeletingTrip = (id) => {
@@ -50,8 +68,11 @@ class TripControl extends React.Component {
     let visibleState = null;
     let btnText = null;
 
-    if(this.state.selectedTrip != null){
-      visibleState = <TripDetails trip={this.state.selectedTrip} onClickingDelete={this.handleDeletingTrip} />
+    if(this.state.editing){
+      visibleState = <EditTripForm trip={this.state.selectedTrip} onEditTrip={this.handleEditingTrip} />
+      btnText="Cancel"
+    } else if(this.state.selectedTrip != null){
+      visibleState = <TripDetails trip={this.state.selectedTrip} onClickingTripDelete={this.handleDeletingTrip} onClickingTripEdit={this.handleEditClick} />
       btnText = "Back";
     } else if(this.state.formVisible){
       visibleState = <NewTripForm onNewTripCreation={this.handleAddingNewTripToList} />

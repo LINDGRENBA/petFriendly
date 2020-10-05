@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function TripDetails(props){
-  const { trip, onClickingDelete } = props;
+  const { trip } = props;
   return(
     <React.Fragment>
       <h3>Details for Trip to {trip.destination}</h3>
@@ -15,14 +15,17 @@ function TripDetails(props){
         <p>Notes:</p>
         <p>{trip.notes}</p>
       </div>
-      <button onClick={() => onClickingDelete(trip.id)} >Delete Trip</button>
+
+      <button onClick={() => props.onClickingTripEdit(trip.id)} >Edit Details</button>
+      <button onClick={() => props.onClickingTripDelete(trip.id)} >Delete Trip</button>
     </React.Fragment>
   );
 }
 
 TripDetails.propTypes = {
   trip: PropTypes.object,
-  onClickingDelete: PropTypes.func
+  onClickingTripDelete: PropTypes.func,
+  onClickingTripEdit: PropTypes.func
 }
 
 export default TripDetails;
