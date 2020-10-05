@@ -2,6 +2,7 @@
 import React from 'react';
 import {v4} from 'uuid';
 import PropTypes from 'prop-types';
+import ReusableForm from './ReusableForm';
 
 function NewTicketForm(props){
 
@@ -12,9 +13,23 @@ function NewTicketForm(props){
 
   return(
     <React.Fragment>
-      <h3>This is a form to add trips</h3>
+      <ReusableForm 
+        formSubmissionHandler={handleNewTripFormSubmission}
+        btnText="Add Trip"
+      />
+    </React.Fragment>
+  );
+}
+
+NewTicketForm.propTypes = {
+  onNewTripCreation: PropTypes.func
+};
+
+export default NewTicketForm;
+
+{/* <h3>This is a form to add trips</h3>
       <form onSubmit={handleNewTripFormSubmission}>
-        {/* Q1 */}
+
         <label>Where are you going?</label>
         <input 
           type='text'
@@ -22,19 +37,19 @@ function NewTicketForm(props){
           placeholder='Canada'
           required
         />
-        {/* Q2 */}
+
         <label>Departure date:</label>
         <input 
           type='date'
           name='departureDate'
         />
-        {/* Q3 */}
+
         <label>Return date:</label>
         <input 
           type='date'
           name='returnDate'
         />
-        {/* Q4 */}
+
         <label>Which pets are you taking?</label>
         <input 
           type='text'
@@ -48,13 +63,4 @@ function NewTicketForm(props){
           placeholder='Remember meds for Gemma'
         />
         <button type="submit">Add Trip</button>
-      </form>
-    </React.Fragment>
-  );
-}
-
-NewTicketForm.propTypes = {
-  onNewTripCreation: PropTypes.func
-};
-
-export default NewTicketForm;
+      </form> */}

@@ -38,12 +38,20 @@ class TripControl extends React.Component {
     this.setState({selectedTrip: selectedTrip});
   }
 
+  handleDeletingTrip = (id) => {
+    const newMainTripList = this.state.mainTripList.filter(trip => trip.id !== id);
+    this.setState({
+      mainTripList: newMainTripList,
+      selectedTrip: null
+    });
+  }
+
   render() {
     let visibleState = null;
     let btnText = null;
 
     if(this.state.selectedTrip != null){
-      visibleState = <TripDetails trip={this.state.selectedTrip} />
+      visibleState = <TripDetails trip={this.state.selectedTrip} onClickingDelete={this.handleDeletingTrip} />
       btnText = "Back";
     } else if(this.state.formVisible){
       visibleState = <NewTripForm onNewTripCreation={this.handleAddingNewTripToList} />
