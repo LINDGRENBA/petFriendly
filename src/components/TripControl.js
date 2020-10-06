@@ -73,7 +73,7 @@ class TripControl extends React.Component {
   //     editing: false,
   //     selectedTrip: null
   //   });
-  // }  IDEA FOR ADDING TRIP INFO AS PLACEHOLDER WHEN EDITING....
+  // }  IDEA FOR ADDING TRIP INFO AS PLACEHOLDER WHEN EDITING.... If editing is true, set placeholder to...
 
   handleEditingTrip = () => {
     this.setState({
