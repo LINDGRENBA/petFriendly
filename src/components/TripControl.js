@@ -59,15 +59,12 @@ class TripControl extends React.Component {
     });
   }
 
-  // handleEditingTrip = (tripToEdit) => {
-  //   const {dispatch} = this.props;
-  //   const action = a.addTrip(tripToEdit);
-  //   dispatch(action);
-  //   this.setState({
-  //     editing: false,
-  //     selectedTrip: null
-  //   });
-  // }
+  handleEditingTrip = () => {
+    this.setState({
+      editing: false,
+      selectedTrip: null
+    });
+  }
 
   handleDeletingTrip = (id) => {
     const {dispatch} = this.props;
