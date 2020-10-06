@@ -5,6 +5,17 @@ import { render } from '@testing-library/react';
 // should above be just - import "@reach/combobox"  ?
 
 const libraries = ["places"];
+const mapContainerStyle = {
+  width: "50vw",
+  height: "50vh"
+};
+
+const center = {
+  lat: 45.4465,
+  lng: -122.6323
+};
+
+
 
 function Search(){
   // google map
@@ -23,7 +34,14 @@ function Search(){
 
 
   return (
-    <div>Map</div>
+    <div>
+      <GoogleMap 
+        mapContainerStyle={mapContainerStyle} 
+        zoom={8} 
+        center={center}>
+
+      </GoogleMap>
+    </div>
   );
   
 }

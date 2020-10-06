@@ -8,7 +8,7 @@ class SearchControl extends React.Component {
     super(props);
     console.log(props);
     this.state = {
-      form:null
+      // form:null
     };
   }
 
