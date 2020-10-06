@@ -104,7 +104,8 @@ October 5th 2020:
 
 October 6th 2020: 
 1. 9:30 to 11:00 - Add client side routing to project
-2. 11:00 to TBD - Research use of GoogleSearch and GoogleMap API to implement into project
+2. 11:00 to 1:30 - Research use of GoogleSearch and GoogleMap API to implement into project
+3. 2:00 to TBD - Follow along with tutorial to integrate google maps api into project
 
 
 ## <p align = "center"> Documentation and Resources used for this project
@@ -117,6 +118,7 @@ October 6th 2020:
 * https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/react?view=aspnetcore-2.2&tabs=netcore-cli
 * https://youtu.be/NjN00cM18Z4
 * https://create-react-app.dev/docs/getting-started/
+* https://youtu.be/WZcxJGmLbSo
 
 
 ## <p align = "center">  <u>**Set Up on Your Local Machine**</u>
