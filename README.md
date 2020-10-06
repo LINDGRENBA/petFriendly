@@ -99,8 +99,8 @@ October 4th 2020: - Get record from Capstone2 pet friendly project
 
 October 5th 2020: 
 1. 8:40 - Start new project using simple create-react-app command
-2. 8:40 to 10:00: Set up new project
-3. 
+2. 8:40 to 10:00 - Set up new project
+3. All day - Create project with react, integrate redux, test and add firebase
 
 
 ## <p align = "center"> Documentation and Resources used for this project
@@ -124,6 +124,22 @@ October 5th 2020:
 * `npm install`  (This command is only necessary the first time you open the project on your computer. It may take several minutes for the install to complete - this is normal)
 * `dotnet build` 
 * `dotnet run`
+
+## <p align = "center">  <u>**Set Up a Database**</u>
+1. Sign up for Firebase
+2. Create a Firebase project and database 
+3. add a .env file to the root of your folder
+4. add your credentials to the .env file, see below (replace the value between the " " with your credential values)
+```
+REACT_APP_FIREBASE_API_KEY = "YOUR-UNIQUE-CREDENTIALS"
+REACT_APP_FIREBASE_AUTH_DOMAIN = "YOUR-PROJECT-NAME.firebaseapp.com"
+REACT_APP_FIREBASE_DATABASE_URL = "https://YOUR-PROJECT-NAME.firebaseio.com"
+REACT_APP_FIREBASE_PROJECT_ID = "YOUR-PROJECT-FIREBASE-PROJECT-ID"
+REACT_APP_FIREBASE_STORAGE_BUCKET = "YOUR-PROJECT-NAME.appspot.com"
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID = "YOUR-PROJECT-SENDER-ID"
+REACT_APP_FIREBASE_APP_ID = "YOUR-PROJECT-APP-ID"
+```
+THIS SHOULD BE MORE DETAILED, UPDATE THIS
 <br>
 <hr>
 

@@ -1,20 +1,33 @@
 //need access to list of trips so it can add new trips to the list
 import React from 'react';
-import {v4} from 'uuid';
+// import {v4} from 'uuid';
 import PropTypes from 'prop-types';
 import ReusableForm from './ReusableForm';
+import {useFirestore} from 'react-redux-firebase';
 
 function NewTicketForm(props){
 
-  function handleNewTripFormSubmission(event){
+  const firestore = useFirestore();
+
+  function addTicketToFirestore(event){
     event.preventDefault();
-    props.onNewTripCreation({destination: event.target.destination.value,  departureDate: event.target.departureDate.value,  returnDate: event.target.returnDate.value,  petName: event.target.petName.value,  notes: event.target.notes.value, id: v4()});
+    props.onNewTripCreation();
+
+    return firestore.collection('trips').add(
+      {
+        destination: event.target.destination.value,  
+        departureDate: event.target.departureDate.value,  
+        returnDate: event.target.returnDate.value,  
+        petName: event.target.petName.value,  
+        notes: event.target.notes.value
+      }
+    );
   }
 
   return(
     <React.Fragment>
       <ReusableForm 
-        formSubmissionHandler={handleNewTripFormSubmission}
+        formSubmissionHandler={addTicketToFirestore}
         btnText="Add Trip"
       />
     </React.Fragment>

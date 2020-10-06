@@ -15,16 +15,4 @@ describe('MyTrip actions', () => {
     });
   });
 
-  it('addTrip should create ADD_TRIP action', () => {
-    expect(actions.addTrip({destination: "Turkey", departureDate: "2020-10-06", returnDate: "2020-10-07", petName: "Gemma", notes: "Remember to bring Mr. Bear", id: 1})).toEqual({
-      type: c.ADD_TRIP,
-      destination: "Turkey",
-      departureDate: "2020-10-06",
-      returnDate: "2020-10-07",
-      petName: "Gemma",
-      notes: "Remember to bring Mr. Bear",
-      id: 1
-    });
-  });
-
 });

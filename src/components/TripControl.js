@@ -15,8 +15,6 @@ class TripControl extends React.Component {
     super(props);
     console.log(props);
     this.state = {
-      // formVisible: false,
-      // mainTripList: [],
       selectedTrip: null,
       editing: false
     };
@@ -25,7 +23,6 @@ class TripControl extends React.Component {
   handleClick = () => {  //using arrow function allows inner function to access props
     if(this.state.selectedTrip != null){
       this.setState({
-        // formVisible: false,
         selectedTrip: null,
         editing: false
       });
@@ -41,13 +38,10 @@ class TripControl extends React.Component {
     this.setState({editing: true});
   }
 
-  handleAddingNewTripToList = (newTrip) => {
+  handleAddingNewTripToList = () => {
     const {dispatch} = this.props;
-    const action = a.addTrip(newTrip);
+    const action = a.toggleForm();
     dispatch(action);
-    // this.setState({formVisible: false});
-    const actionToggle = a.toggleForm();
-    dispatch(actionToggle);
   }
 
   handleSelectingTrip = (id) => {
@@ -55,15 +49,15 @@ class TripControl extends React.Component {
     this.setState({selectedTrip: selectedTrip});
   }
 
-  handleEditingTrip = (tripToEdit) => {
-    const {dispatch} = this.props;
-    const action = a.addTrip(tripToEdit);
-    dispatch(action);
-    this.setState({
-      editing: false,
-      selectedTrip: null
-    });
-  }
+  // handleEditingTrip = (tripToEdit) => {
+  //   const {dispatch} = this.props;
+  //   const action = a.addTrip(tripToEdit);
+  //   dispatch(action);
+  //   this.setState({
+  //     editing: false,
+  //     selectedTrip: null
+  //   });
+  // }
 
   handleDeletingTrip = (id) => {
     const {dispatch} = this.props;
