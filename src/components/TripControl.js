@@ -83,9 +83,7 @@ class TripControl extends React.Component {
   }
 
   handleDeletingTrip = (id) => {
-    const {dispatch} = this.props;
-    const action = a.deleteTrip(id);
-    dispatch(action);
+    this.props.firestore.delete({collection: 'trips', doc: id});
     this.setState({
       selectedTrip: null
     });
@@ -118,13 +116,11 @@ class TripControl extends React.Component {
 }
 
 TripControl.propTypes = {
-  // mainTripList: PropTypes.object,
   formVisible: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
-    // mainTripList: state.mainTripList,
     formVisible: state.formVisible
   }
 }
