@@ -40,7 +40,7 @@ describe('tripListReducer', () => {
   test('should add a new trip to the mainTripList', () => {
     const {destination, departureDate, returnDate, petName, notes, id} = tripData;
     action = {
-      type: 'ADD_TRIP',
+      type: c.ADD_TRIP,
       destination: destination,
       departureDate: departureDate,
       returnDate: returnDate,
@@ -62,7 +62,7 @@ describe('tripListReducer', () => {
 
   test('should delete a trip', () => {
     action = {
-      type: 'DELETE_TRIP',
+      type: c.DELETE_TRIP,
       id: 1
     };
     expect(tripListReducer(currentState, action)).toEqual({

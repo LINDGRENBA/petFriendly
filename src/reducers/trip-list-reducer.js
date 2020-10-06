@@ -1,7 +1,9 @@
+import * as c from './../actions/ActionTypes';
+
 export default (state = {}, action) => {
   const {destination, departureDate, returnDate, petName, notes, id} = action;
   switch(action.type){
-    case 'ADD_TRIP':
+    case c.ADD_TRIP:
       return Object.assign({}, state, {
         [id] : {
           destination: destination,
@@ -12,7 +14,7 @@ export default (state = {}, action) => {
           id: id
         }
       });
-      case 'DELETE_TRIP':
+      case c.DELETE_TRIP:
         const newState = { ...state };
         delete newState[id];
         return newState;
