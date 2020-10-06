@@ -14,18 +14,15 @@ function App() {
       <h2>Welcome to Pet Friendly</h2>
       <p>An app to take the stress out of traveling with your pet.</p>
       <Switch>
-        <Route path='/'>
+        <Route exact path="/">
           <SearchControl />
         </Route>
-        <Route path='/signin'>
+        <Route exact path="/signin">
           <Signin />
         </Route>
-        <Route path='/mytrips-control'>
+        <Route exact path="/mytrips">
           <TripControl />
         </Route>
-        {/* <Route path='/signin'>
-          
-        </Route> */}
       </Switch>
     </Router>
   );
