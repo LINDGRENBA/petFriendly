@@ -3,6 +3,7 @@ import {createStore} from 'redux';
 import formVisibleReducer from '../../reducers/form-visible-reducer';
 import tripListReducer from '../../reducers/trip-list-reducer';
 
+
 let store = createStore(rootReducer);
 
 describe('rootReducer', () => {

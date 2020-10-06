@@ -1,4 +1,5 @@
 import tripListReducer from '../../reducers/trip-list-reducer';
+import * as c from './../../actions/ActionTypes';
 
 describe('tripListReducer', () => {
 
