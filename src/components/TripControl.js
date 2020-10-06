@@ -8,6 +8,7 @@ import {connect} from 'react-redux';
 // import Trip from './Trip';
 import PropTypes from 'prop-types';
 import * as a from './../actions';
+import {withFirestore} from 'react-redux-firebase';
 
 class TripControl extends React.Component {
 
@@ -45,8 +46,17 @@ class TripControl extends React.Component {
   }
 
   handleSelectingTrip = (id) => {
-    const selectedTrip = this.props.mainTripList[id];
-    this.setState({selectedTrip: selectedTrip});
+    this.props.firestore.get({collection: 'trips', doc: id}).then((trip) => {
+      const firestoreTrip = {
+        destination: trip.get("destination"),
+        departureDate: trip.get("departureDate"),
+        returnDate: trip.get("returnDate"),
+        petName: trip.get("petName"),
+        notes: trip.get("notes"),
+        id: trip.id
+      }
+      this.setState({selectedTrip: firestoreTrip});
+    });
   }
 
   // handleEditingTrip = (tripToEdit) => {
@@ -95,17 +105,17 @@ class TripControl extends React.Component {
 }
 
 TripControl.propTypes = {
-  mainTripList: PropTypes.object,
+  // mainTripList: PropTypes.object,
   formVisible: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
-    mainTripList: state.mainTripList,
+    // mainTripList: state.mainTripList,
     formVisible: state.formVisible
   }
 }
 
 TripControl = connect(mapStateToProps)(TripControl);
 
-export default TripControl;
+export default withFirestore(TripControl);  // withFirestore is a HOC, like connect(), that gives our component ability to use Firestore

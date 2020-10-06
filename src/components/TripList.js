@@ -9,7 +9,7 @@ import {useFirestoreConnect, isLoaded} from 'react-redux-firebase';
 function TripList(props){
 
   useFirestoreConnect([
-    {collection:'trips'}
+    {collection: 'trips'}
   ]);
 
   const trips = useSelector(state => state.firestore.ordered.trips);
@@ -17,8 +17,8 @@ function TripList(props){
   if(isLoaded(trips)){
     return(
       <React.Fragment>
-        {Object.values(props.tripList).map((trip) => 
-          <Trip
+        {trips.map((trip) => {
+          return <Trip
           whenDetailsButtonClicked = {props.onTripSelection}
           destination={trip.destination}
           petName={trip.petName}
@@ -27,7 +27,7 @@ function TripList(props){
           notes={trip.notes}
           id={trip.id}
           key={trip.id} />
-        )}
+        })}
       </React.Fragment>
     );
   } else {
