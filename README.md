@@ -22,8 +22,8 @@ This app will make it easier for pet owners to travel with their pets. Searching
 ### <p align = "center"> **MVC**
 | Minimum Viable Product | What technologies or tools will be needed to achieve this MVP | Notes and Considerations |
 | ----- | ----- | ------ |
+|  Users should be able to create a 'destination' list on the MyTrips page and add destinations  |  React, Redux, Firestore / Firebase CRUD functionality  |  see stretch goals for further expansion on list capabilities  |
 |  Users should be able to search by location and receive results for pet friendly restaurants, shops, hotels, etc.  |  Custom API / Pre-existing API (Google Maps, AirBnB, etc.) / .NET-Core backend to handle fetching from API  |  Integrating several APIs in one project may be complex. May need to begin with a single custom faux-API created as proof of concept and integrate other API as stretch goal.  |
-|  Users should be able to create a 'destination' list on the MyTrips page and add destinations  |  Will need a database - MySQL, Firebase / Firestore or MongoDB  |  see stretch goals for further expansion on list capabilities  |
 |  Users should be able to add a location search result to a destination | Will need a database - MySQL, Firebase / Firestore or MongoDB  |  see stretch goals for further expansion on list capabilities  |
    
 <br>
@@ -101,6 +101,10 @@ October 5th 2020:
 1. 8:40 - Start new project using simple create-react-app command
 2. 8:40 to 10:00 - Set up new project
 3. All day - Create project with react, integrate redux, test and add firebase
+
+October 6th 2020: 
+1. 9:30 to 11:00 - Add client side routing to project
+2. 11:00 to TBD - Research use of GoogleSearch and GoogleMap API to implement into project
 
 
 ## <p align = "center"> Documentation and Resources used for this project
