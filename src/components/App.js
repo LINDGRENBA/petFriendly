@@ -3,16 +3,31 @@ import './../App.css';
 import './NavMenu';
 import NavMenu from './NavMenu';
 import TripControl from './TripControl';
+import SearchControl from './SearchControl'
+import Signin from './Signin';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
   return (
-    <React.Fragment>
+    <Router>
       <NavMenu />
-      <h1>Pet Friendly</h1>
+      <h2>Welcome to Pet Friendly</h2>
       <p>An app to take the stress out of traveling with your pet.</p>
-
-      <TripControl />
-    </React.Fragment>
+      <Switch>
+        <Route path='/'>
+          <SearchControl />
+        </Route>
+        <Route path='/signin'>
+          <Signin />
+        </Route>
+        <Route path='/mytrips-control'>
+          <TripControl />
+        </Route>
+        {/* <Route path='/signin'>
+          
+        </Route> */}
+      </Switch>
+    </Router>
   );
 }
 
