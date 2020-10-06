@@ -15,8 +15,6 @@ class TripControl extends React.Component {
     super(props);
     console.log(props);
     this.state = {
-      // formVisible: false,
-      // mainTripList: [],
       selectedTrip: null,
       editing: false
     };
@@ -25,7 +23,6 @@ class TripControl extends React.Component {
   handleClick = () => {  //using arrow function allows inner function to access props
     if(this.state.selectedTrip != null){
       this.setState({
-        // formVisible: false,
         selectedTrip: null,
         editing: false
       });
@@ -43,8 +40,6 @@ class TripControl extends React.Component {
 
   handleAddingNewTripToList = () => {
     const {dispatch} = this.props;
-    // const action = a.addTrip(newTrip);
-    // this.setState({formVisible: false});
     const action = a.toggleForm();
     dispatch(action);
   }
