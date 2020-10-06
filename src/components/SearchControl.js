@@ -17,6 +17,8 @@ class SearchControl extends React.Component {
       <React.Fragment>
         <h1>Search for Pet Friendly places in and around your destination!</h1>
         <p>Search box here</p>
+        <Search />
+        <SearchResults />
       </React.Fragment>
     )
   }
