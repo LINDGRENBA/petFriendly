@@ -7,16 +7,30 @@ import {createStore} from 'redux';
 // import reducer from './reducers/trip-list-reducer';
 import {Provider} from 'react-redux';
 import rootReducer from './reducers/index';
+import {ReactReduxFirebaseProvider} from 'react-redux-firebase'; //similar to Provider
+import {createFirestoreInstance} from 'redux-firestore';
+import firebase from './firebase';
 
 const store = createStore(rootReducer);
+
+const rrfProps = {
+  firebase,
+  config: {
+    userProfile: "users" //states that any data on users will be stored in a collection called users
+  },
+  dispatch: store.dispatch,
+  createFirestoreInstance
+}
 
 store.subscribe(() => 
   console.log(store.getState())
 );
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
+  <Provider store={store}> 
+    <ReactReduxFirebaseProvider {...rrfProps}>
+      <App />
+    </ReactReduxFirebaseProvider>
   </Provider>,
   document.getElementById('root')
 );
