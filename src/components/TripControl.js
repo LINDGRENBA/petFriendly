@@ -59,6 +59,22 @@ class TripControl extends React.Component {
     });
   }
 
+  // handleEditingTrip = (id) => {
+  //   this.props.firestore.get({collection: 'trips', doc: id}).then((trip) => {
+  //     const firestoreTrip = {
+  //       destination: trip.get("destination"),
+  //       departureDate: trip.get("departureDate"),
+  //       returnDate: trip.get("returnDate"),
+  //       petName: trip.get("petName"),
+  //       notes: trip.get("notes"),
+  //       id: trip.id
+  //     }
+  //   this.setState({
+  //     editing: false,
+  //     selectedTrip: null
+  //   });
+  // }  IDEA FOR ADDING TRIP INFO AS PLACEHOLDER WHEN EDITING....
+
   handleEditingTrip = () => {
     this.setState({
       editing: false,
