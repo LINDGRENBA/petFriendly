@@ -1,6 +1,6 @@
 import React from 'react';
 import Search from './Search';
-import SearchResults from './SearchResults';
+// import SearchResults from './SearchResults';
 
 class SearchControl extends React.Component {
 
@@ -8,7 +8,7 @@ class SearchControl extends React.Component {
     super(props);
     console.log(props);
     this.state = {
-      //state here...
+      form:null
     };
   }
 
@@ -18,7 +18,7 @@ class SearchControl extends React.Component {
         <h1>Search for Pet Friendly places in and around your destination!</h1>
         <p>Search box here</p>
         <Search />
-        <SearchResults />
+        {/* <SearchResults /> */}
       </React.Fragment>
     )
   }
