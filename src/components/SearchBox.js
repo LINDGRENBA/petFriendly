@@ -1,7 +1,7 @@
 import React from 'react';
 import usePlacesAutoComplete, {getGeocode, getLatLng} from 'use-places-autocomplete';
-import {Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption} from '@reach/combobox';
-import {GoogleMap, useLoadScript, Marker, InfoWindow} from '@react-google-maps/api';
+import {Combobox, ComboboxInput, ComboboxPopover, ComboboxOption} from '@reach/combobox';
+import {useLoadScript} from '@react-google-maps/api';
 // import {v4} from 'uuid';
 import PropTypes from 'prop-types';
 
