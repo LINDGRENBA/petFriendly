@@ -22,17 +22,18 @@ const options = {
 };
 
 
-
 function Search(){
+
   // google map
   const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-    //enable additional libraries
+    //need to enable additional libraries
     libraries
   });
 
+  // HOOKS
   const [markers, setMarkers] = React.useState([]); // HOOK FOR SETTING MARKERS
-  
+  const [selected, setSelected] = React.useState(null); // HOOK TO GET VALUE WHEN USER CLICKS MARKER AND HOLDS INFO FOR MARKER USER CLICKED
 
   const onMapClick = React.useCallback((event) => {
     setMarkers((current) => [
@@ -72,13 +73,28 @@ function Search(){
             <Marker 
               key={marker.id}
               position={{ lat: marker.lat, lng: marker.lng }}
-              icon= {{ 
+              icon={{ 
                       icon: "", // NEED TO SET ICON
                       scaledSize: new window.google.maps.Size(30, 30),
                       origin: new window.google.maps.Point(0, 0),
                       anchor: new window.google.maps.Point(15, 15) 
-                    }}  />
+                    }}
+              onClick={() => { // SETS THE VALUE OF SELECTED TO THE MARKER THE USER SELECTED - HOOK ABOVE
+                setSelected(marker);
+              }}
+            />
           ))}
+
+          { 
+            selected ? 
+            (<InfoWindow 
+              position={{lat: selected.lat, lng: selected.lng}}
+              onCloseClick={() => {
+                setSelected(null);
+              }}>
+              <div><h2>Place Name</h2></div>
+            </InfoWindow>) : null
+          }
       </GoogleMap>
     </div>
   );
