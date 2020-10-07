@@ -55,6 +55,13 @@ function Search(){
     mapRef.current = map;
   }, []);
 
+  // function to pan map when user clicks on option in ComboboxOptions in SearchBox, will reference mapRef above
+  // panTo naming is important - built in function
+  const panTo = React.useCallback(({lat, lng}) => {
+    mapRef.current.panTo({lat, lng});
+    mapRef.current.setZoom(14);
+  }, []);
+
   if(loadError) {
     return "Error loading maps";
   } 
@@ -62,11 +69,12 @@ function Search(){
     return "Loading maps...";
   } 
 
-
+// need to pass function for panning map into searchbox as property
+// should id be place_id to set unique key ? ERROR FIX ?
   return (
     <div>
 
-      <SearchBox />
+      <SearchBox panTo={panTo}/>
 
       <GoogleMap 
         mapContainerStyle={mapContainerStyle} 

@@ -2,11 +2,12 @@ import React from 'react';
 import usePlacesAutoComplete, {getGeocode, getLatLng} from 'use-places-autocomplete';
 import {Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption} from '@reach/combobox';
 import {GoogleMap, useLoadScript, Marker, InfoWindow} from '@react-google-maps/api';
-import {v4} from 'uuid';
+// import {v4} from 'uuid';
+import PropTypes from 'prop-types';
 
 const libraries = ["places"];
 
-function SearchBox() {
+function SearchBox(props) {
 
   const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -46,12 +47,12 @@ function SearchBox() {
           try {
             const results = await getGeocode({address});
             const {lat, lng} = await getLatLng(results[0]);
+            props.panTo({lat, lng});
             console.log(lat, lng);
             console.log(results[0]);
           } catch(error) {
             console.log("error: " + error);
           }
-          console.log("whatsup");
         }}
       > 
         <ComboboxInput 
@@ -71,6 +72,10 @@ function SearchBox() {
       </Combobox> 
     </div>
   )
+}
+
+SearchBox.propTypes = {
+  panTo: PropTypes.func
 }
 
 export default SearchBox;
