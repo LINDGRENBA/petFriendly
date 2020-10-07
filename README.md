@@ -64,7 +64,7 @@ This app will make it easier for pet owners to travel with their pets. Searching
 | Issue & Message | Solution |
 | ----- | ----- | 
 | When clicking 'Trip Details' button, page is not re-directed to TripDetails component | Continue further with project setup |
-| Service: This API project is not authorized to use this API.  For more information on authentication and Google Maps JavaScript API services | ? |
+| Service: This API project is not authorized to use this API.  For more information on authentication and Google Maps JavaScript API services | Enable Geocoding API in PetFriendly google projects platform |
 | Each child in a list should have a unique "key" prop. Check the render method of `SearchBox`. See https://fb.me/react-warning-keys for more information.
     in ComboboxOption (at SearchBox.js:68)
     in SearchBox (at SearchMap.js:69)
