@@ -2,6 +2,7 @@ import React from 'react';
 import {GoogleMap, useLoadScript, Marker, InfoWindow} from '@react-google-maps/api';
 import "@reach/combobox/styles.css";
 import { render } from '@testing-library/react';
+import { v4 } from 'uuid';
 // should above be just - import "@reach/combobox"  ?
 
 const libraries = ["places"];
@@ -15,6 +16,11 @@ const center = {
   lng: -122.6323
 };
 
+const options = {
+  disableDefaultUI: true,
+  zoomControl: true
+};
+
 
 
 function Search(){
@@ -24,6 +30,24 @@ function Search(){
     //enable additional libraries
     libraries
   });
+
+  // const [markers, setMarkers] = React.useState([]); HOOK FOR SETTING MARKERS
+  const onMapClick = React.useCallback((event) => {
+    setMarkers((current) => [
+      ...current, 
+      {
+        lat: event.latLng.lat(),
+        lng: event.latLng.lng(),
+        id: v4,
+      },
+    ]);
+  }, []);
+
+  // this will save the instance of the current map when it renders in the 'map' so that we can then use it without re-rendering
+  const mapRef = React.useRef();
+  const onMapLoad = React.useCallback(() => {
+    mapRef.current = map;
+  }, []);
 
   if(loadError) {
     return "Error loading maps";
@@ -38,8 +62,16 @@ function Search(){
       <GoogleMap 
         mapContainerStyle={mapContainerStyle} 
         zoom={8} 
-        center={center}>
-
+        center={center}
+        options={options}
+        onClick={onMapClick}
+        onLoad={onMapLoad}>
+          {markers.map((marker) => (
+            <Marker 
+              key={marker.id}
+              position={{ lat: marker.lat, lng: marker.lng }}
+              icon={{ url: ""}}  />
+          ))}
       </GoogleMap>
     </div>
   );

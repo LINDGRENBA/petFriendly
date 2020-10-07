@@ -45,6 +45,9 @@ This app will make it easier for pet owners to travel with their pets. Searching
 |  Travel section where users can specify `1. Where they're traveling, 2. How they're getting there` and `3. What type of pet they're traveling with.` The user will then be shown or directed to information about what they need to know to successfully travel with their pet  |  will need to reseach options  |  no further notes at this time  |
 |  Deploy site  |  will need to reseach options  |  may be able to deploy using Gatsby, but project not initially built with Gatsby, so may need other tools  |
 |  Style google map  |  https://snazzymaps.com/explore, custom CSS  |  snazzy maps themes I like: https://snazzymaps.com/style/74/becomeadinosaur, https://snazzymaps.com/style/18/retro, https://snazzymaps.com/style/14889/flat-pale, https://snazzymaps.com/style/17/bright-and-bubbly  |
+|  Users can add map icons to pet friendly places that are not yet in the API or database  |  google maps API |  Watch this tutorial from minute 12 to minute 16  |
+|    |    |    |
+|    |    |    |
 |    |    |    |
 
 ### <p align = "center"> **Model**
@@ -118,7 +121,11 @@ October 6th 2020:
 * https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/react?view=aspnetcore-2.2&tabs=netcore-cli
 * https://youtu.be/NjN00cM18Z4
 * https://create-react-app.dev/docs/getting-started/
-* https://youtu.be/WZcxJGmLbSo
+* https://youtu.be/WZcxJGmLbSo 
+  - minute 8 to 10 of video: how to add styling to map
+  - minute 10: disable select map UI feature, customize map header with icon
+  - minute 12: how to add event listener so user click adds icon and saves location to state
+
 
 
 ## <p align = "center">  <u>**Set Up on Your Local Machine**</u>
