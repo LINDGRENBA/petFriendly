@@ -78,7 +78,7 @@ This app will make it easier for pet owners to travel with their pets. Searching
     in App (at src/index.js:31)
     in ReduxFirestoreProvider (created by ReactReduxFirebaseProvider)
     in ReactReduxFirebaseProvider (at src/index.js:30)
-    in Provider (at src/index.js:29) | ? |
+    in Provider (at src/index.js:29) | update `v4()` in SearchMap component to `event.place_id` and update `id` in SearchBox component to `place_id` |
 |  |  |
 |  |  |
 
@@ -123,7 +123,7 @@ October 5th 2020:
 October 6th 2020: 
 1. 9:30 to 11:00 - Add client side routing to project
 2. 11:00 to 1:30 - Research use of GoogleSearch and GoogleMap API to implement into project
-3. 2:00 to TBD - Follow along with tutorial to integrate google maps api into project
+3. 2:00 to 10:00 - Follow along with tutorial to integrate google maps api into project
 
 
 ## <p align = "center"> Documentation and Resources used for this project
@@ -136,7 +136,9 @@ October 6th 2020:
 * https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/react?view=aspnetcore-2.2&tabs=netcore-cli
 * https://youtu.be/NjN00cM18Z4
 * https://create-react-app.dev/docs/getting-started/
-* https://youtu.be/WZcxJGmLbSo 
+* https://youtu.be/Zxf1mnP5zcw - TraversyMedia
+* https://youtu.be/pRiQeo17u6c - TraversyMedia
+* https://youtu.be/WZcxJGmLbSo - Leigh Halliday
   - minute 8 to 10 of video: how to add styling to map
   - minute 10: disable select map UI feature, customize map header with icon
   - minute 12: how to add event listener so user click adds icon and saves location to state

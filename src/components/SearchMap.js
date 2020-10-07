@@ -44,7 +44,7 @@ function Search(){
       {
         lat: event.latLng.lat(),
         lng: event.latLng.lng(),
-        id: v4(),
+        id: event.place_id,
       },
     ]);
   }, []);
