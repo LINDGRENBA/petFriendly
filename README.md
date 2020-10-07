@@ -47,7 +47,7 @@ This app will make it easier for pet owners to travel with their pets. Searching
 |  Style google map  |  https://snazzymaps.com/explore, custom CSS  |  snazzy maps themes I like: https://snazzymaps.com/style/74/becomeadinosaur, https://snazzymaps.com/style/18/retro, https://snazzymaps.com/style/14889/flat-pale, https://snazzymaps.com/style/17/bright-and-bubbly - add a mapStyles.js file with code for styling map, import into component that holds map |
 |  Users can add map icons to pet friendly places that are not yet in the API or database  |  google maps API |  Watch this tutorial from minute 12 to minute 16  |
 |  Add animation to markers on map (ex: drop, bounce, etc)  |  google maps API  |  resource: https://developers.google.com/maps/documentation/javascript/markers  |
-|    |    |    |
+|  Add a GeoLocations button on map to pan to user's location if user gives permission  |  google maps API + GeoLocation API  |  resource: https://youtu.be/WZcxJGmLbSo @ minute 43:48  |
 |    |    |    |
 
 ### <p align = "center"> **Model**

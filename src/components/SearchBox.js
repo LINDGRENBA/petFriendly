@@ -21,7 +21,7 @@ function SearchBox(props) {
     value, 
     suggestions: {status, data}, 
     setValue, 
-    clearSuggestion 
+    clearSuggestions
   } = usePlacesAutoComplete({
     requestOptions: {
       location: {lat: () => 45.4465,
@@ -40,14 +40,19 @@ function SearchBox(props) {
   // getGeocode, getLatLng
   // getGeocode takes an object, which is the address, and returns many results - use await because it's a promise
   // getLatLng extracts the longitude and latitude - also use await because also a promise
+  // setValue inside of onSelect updates state --> address - sets value in the searchbox / combobox to the value that the user selected, false - sets argument of shouldFetchData to false to indicate that we do not need to fetch data from the google maps api (cause we already know what the user selected)
+  // clearSuggestions clears the comboboxOption suggestions so that after user selects one we are no longer showing all the other options
   return (
     <div className="styleMe"> 
       <Combobox 
         onSelect={ async (address) => {
+          setValue(address, false);
+          clearSuggestions();
           try {
             const results = await getGeocode({address});
             const {lat, lng} = await getLatLng(results[0]);
             props.panTo({lat, lng});
+            // DELETE CONSOLE LOGS BEFORE PRESENTING / SUBMITTING
             console.log(lat, lng);
             console.log(results[0]);
           } catch(error) {
