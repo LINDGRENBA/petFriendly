@@ -22,8 +22,8 @@ This app will make it easier for pet owners to travel with their pets. Searching
 ### <p align = "center"> **MVC**
 | Minimum Viable Product | What technologies or tools will be needed to achieve this MVP | Notes and Considerations |
 | ----- | ----- | ------ |
+|  Users should be able to create a 'destination' list on the MyTrips page and add destinations  |  React, Redux, Firestore / Firebase CRUD functionality  |  see stretch goals for further expansion on list capabilities  |
 |  Users should be able to search by location and receive results for pet friendly restaurants, shops, hotels, etc.  |  Custom API / Pre-existing API (Google Maps, AirBnB, etc.) / .NET-Core backend to handle fetching from API  |  Integrating several APIs in one project may be complex. May need to begin with a single custom faux-API created as proof of concept and integrate other API as stretch goal.  |
-|  Users should be able to create a 'destination' list on the MyTrips page and add destinations  |  Will need a database - MySQL, Firebase / Firestore or MongoDB  |  see stretch goals for further expansion on list capabilities  |
 |  Users should be able to add a location search result to a destination | Will need a database - MySQL, Firebase / Firestore or MongoDB  |  see stretch goals for further expansion on list capabilities  |
    
 <br>
@@ -44,7 +44,10 @@ This app will make it easier for pet owners to travel with their pets. Searching
 |  Users can add additional search parameters. For example `traveling with dog` and `require wheel chair access` or add more specific information about what type of pet they're traveling with, such as `dog` or `boa-constrictor`  |  Complex search queries  |  Firebase / Firestore may work well for MVP, but has limited query capabilities - need to research which databases work well with React and have complex query capabilities  |
 |  Travel section where users can specify `1. Where they're traveling, 2. How they're getting there` and `3. What type of pet they're traveling with.` The user will then be shown or directed to information about what they need to know to successfully travel with their pet  |  will need to reseach options  |  no further notes at this time  |
 |  Deploy site  |  will need to reseach options  |  may be able to deploy using Gatsby, but project not initially built with Gatsby, so may need other tools  |
-|    |    |    |
+|  Style google map  |  https://snazzymaps.com/explore, custom CSS  |  snazzy maps themes I like: https://snazzymaps.com/style/74/becomeadinosaur, https://snazzymaps.com/style/18/retro, https://snazzymaps.com/style/14889/flat-pale, https://snazzymaps.com/style/17/bright-and-bubbly - add a mapStyles.js file with code for styling map, import into component that holds map |
+|  Users can add map icons to pet friendly places that are not yet in the API or database  |  google maps API |  Watch this tutorial from minute 12 to minute 16  |
+|  Add animation to markers on map (ex: drop, bounce, etc)  |  google maps API  |  resource: https://developers.google.com/maps/documentation/javascript/markers  |
+|  Add a GeoLocations button on map to pan to user's location if user gives permission  |  google maps API + GeoLocation API  |  resource: https://youtu.be/WZcxJGmLbSo @ minute 43:48  |
 |    |    |    |
 
 ### <p align = "center"> **Model**
@@ -60,7 +63,22 @@ This app will make it easier for pet owners to travel with their pets. Searching
 ### <p align = "center"> **Known Bugs**
 | Issue & Message | Solution |
 | ----- | ----- | 
-| When clicking 'Trip Details' button, page is not re-directed to TripDetails component |  |
+| When clicking 'Trip Details' button, page is not re-directed to TripDetails component | Continue further with project setup |
+| Service: This API project is not authorized to use this API.  For more information on authentication and Google Maps JavaScript API services | Enable Geocoding API in PetFriendly google projects platform |
+| Each child in a list should have a unique "key" prop. Check the render method of `SearchBox`. See https://fb.me/react-warning-keys for more information.
+    in ComboboxOption (at SearchBox.js:68)
+    in SearchBox (at SearchMap.js:69)
+    in div (at SearchMap.js:67)
+    in Search (at SearchControl.js:20)
+    in SearchControl (at App.js:18)
+    in Route (at App.js:17)
+    in Switch (at App.js:16)
+    in Router (created by BrowserRouter)
+    in BrowserRouter (at App.js:12)
+    in App (at src/index.js:31)
+    in ReduxFirestoreProvider (created by ReactReduxFirebaseProvider)
+    in ReactReduxFirebaseProvider (at src/index.js:30)
+    in Provider (at src/index.js:29) | update `v4()` in SearchMap component to `event.place_id` and update `id` in SearchBox component to `place_id` |
 |  |  |
 |  |  |
 
@@ -102,6 +120,11 @@ October 5th 2020:
 2. 8:40 to 10:00 - Set up new project
 3. All day - Create project with react, integrate redux, test and add firebase
 
+October 6th 2020: 
+1. 9:30 to 11:00 - Add client side routing to project
+2. 11:00 to 1:30 - Research use of GoogleSearch and GoogleMap API to implement into project
+3. 2:00 to 10:00 - Follow along with tutorial to integrate google maps api into project
+
 
 ## <p align = "center"> Documentation and Resources used for this project
 * **https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/react?view=aspnetcore-2.2&tabs=netcore-cli**
@@ -113,6 +136,13 @@ October 5th 2020:
 * https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/react?view=aspnetcore-2.2&tabs=netcore-cli
 * https://youtu.be/NjN00cM18Z4
 * https://create-react-app.dev/docs/getting-started/
+* https://youtu.be/Zxf1mnP5zcw - TraversyMedia
+* https://youtu.be/pRiQeo17u6c - TraversyMedia
+* https://youtu.be/WZcxJGmLbSo - Leigh Halliday
+  - minute 8 to 10 of video: how to add styling to map
+  - minute 10: disable select map UI feature, customize map header with icon
+  - minute 12: how to add event listener so user click adds icon and saves location to state
+
 
 
 ## <p align = "center">  <u>**Set Up on Your Local Machine**</u>
