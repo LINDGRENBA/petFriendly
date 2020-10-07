@@ -31,21 +31,23 @@ function Search(){
     libraries
   });
 
-  // const [markers, setMarkers] = React.useState([]); HOOK FOR SETTING MARKERS
+  const [markers, setMarkers] = React.useState([]); // HOOK FOR SETTING MARKERS
+  
+
   const onMapClick = React.useCallback((event) => {
     setMarkers((current) => [
       ...current, 
       {
         lat: event.latLng.lat(),
         lng: event.latLng.lng(),
-        id: v4,
+        id: v4(),
       },
     ]);
   }, []);
 
   // this will save the instance of the current map when it renders in the 'map' so that we can then use it without re-rendering
   const mapRef = React.useRef();
-  const onMapLoad = React.useCallback(() => {
+  const onMapLoad = React.useCallback((map) => {
     mapRef.current = map;
   }, []);
 
@@ -70,7 +72,12 @@ function Search(){
             <Marker 
               key={marker.id}
               position={{ lat: marker.lat, lng: marker.lng }}
-              icon={{ url: ""}}  />
+              icon= {{ 
+                      icon: "", // NEED TO SET ICON
+                      scaledSize: new window.google.maps.Size(30, 30),
+                      origin: new window.google.maps.Point(0, 0),
+                      anchor: new window.google.maps.Point(15, 15) 
+                    }}  />
           ))}
       </GoogleMap>
     </div>
