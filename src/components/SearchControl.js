@@ -1,5 +1,5 @@
 import React from 'react';
-import Search from './Search';
+import SearchMap from './SearchMap';
 // import SearchResults from './SearchResults';
 
 class SearchControl extends React.Component {
@@ -17,7 +17,7 @@ class SearchControl extends React.Component {
       <React.Fragment>
         <h1>Search for Pet Friendly places in and around your destination!</h1>
         <p>Search box here</p>
-        <Search />
+        <SearchMap />
         {/* <SearchResults /> */}
       </React.Fragment>
     )

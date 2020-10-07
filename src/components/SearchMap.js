@@ -3,7 +3,10 @@ import {GoogleMap, useLoadScript, Marker, InfoWindow} from '@react-google-maps/a
 import "@reach/combobox/styles.css";
 import { render } from '@testing-library/react';
 import { v4 } from 'uuid';
+import usePlacesAutoComplete, {getGeocode, getLatLng} from 'use-places-autocomplete';
+import {Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption} from '@reach/combobox';
 // should above be just - import "@reach/combobox"  ?
+import SearchBox from './SearchBox';
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -11,7 +14,7 @@ const mapContainerStyle = {
   height: "50vh"
 };
 
-const center = {
+const center = { // for initial purposes, set to milwaukie, OR
   lat: 45.4465,
   lng: -122.6323
 };
@@ -22,7 +25,7 @@ const options = {
 };
 
 
-function Search(){
+function SearchMap(){
 
   // google map
   const {isLoaded, loadError} = useLoadScript({
@@ -62,6 +65,9 @@ function Search(){
 
   return (
     <div>
+
+      <SearchBox />
+
       <GoogleMap 
         mapContainerStyle={mapContainerStyle} 
         zoom={8} 
@@ -102,4 +108,4 @@ function Search(){
 }
 
 
-export default Search;
+export default SearchMap;
