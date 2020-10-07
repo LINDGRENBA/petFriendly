@@ -33,21 +33,34 @@ function SearchBox() {
   // comboboxInput value={value} gets value from usePlacesAutoComplete hook above
   // comboboxInput onChange listens for event which is user typing something in the search box
   // onChange setValue takes value of the event
+  // style me does not yet have any styling
+  // ComboboxOption inside of ComboboxPopover is what we're actually rendering out
+  return (
+    <div className="styleMe"> 
+      <Combobox 
+      onSelect={(address) => {
 
-  return <Combobox 
-    onSelect={(address) => {
-      console.log(address);
-      }}
-    > 
-      <ComboboxInput 
-        value={value} 
-        onChange={(event) => {
-          setValue(event.target.value);
+        
+        console.log(address);
         }}
-        disabled={!ready}
-        placeholder="Enter your destination"
-      /> 
-    </Combobox>
+      > 
+        <ComboboxInput 
+          value={value} 
+          onChange={(event) => {
+            setValue(event.target.value);
+          }}
+          disabled={!ready}
+          placeholder="Enter your destination"
+        /> 
+        <ComboboxPopover>
+          {status === "OK" && 
+            data.map(({id, description}) => (
+              <ComboboxOption key={id} value={description} />
+            ))}
+        </ComboboxPopover>
+      </Combobox> 
+    </div>
+  )
 }
 
 export default SearchBox;
