@@ -25,7 +25,7 @@ const options = {
 };
 
 
-function SearchMap(){
+function Search(){
 
   // google map
   const {isLoaded, loadError} = useLoadScript({
@@ -108,4 +108,4 @@ function SearchMap(){
 }
 
 
-export default SearchMap;
+export default Search;

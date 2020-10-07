@@ -63,7 +63,22 @@ This app will make it easier for pet owners to travel with their pets. Searching
 ### <p align = "center"> **Known Bugs**
 | Issue & Message | Solution |
 | ----- | ----- | 
-| When clicking 'Trip Details' button, page is not re-directed to TripDetails component |  |
+| When clicking 'Trip Details' button, page is not re-directed to TripDetails component | Continue further with project setup |
+| Service: This API project is not authorized to use this API.  For more information on authentication and Google Maps JavaScript API services | ? |
+| Each child in a list should have a unique "key" prop. Check the render method of `SearchBox`. See https://fb.me/react-warning-keys for more information.
+    in ComboboxOption (at SearchBox.js:68)
+    in SearchBox (at SearchMap.js:69)
+    in div (at SearchMap.js:67)
+    in Search (at SearchControl.js:20)
+    in SearchControl (at App.js:18)
+    in Route (at App.js:17)
+    in Switch (at App.js:16)
+    in Router (created by BrowserRouter)
+    in BrowserRouter (at App.js:12)
+    in App (at src/index.js:31)
+    in ReduxFirestoreProvider (created by ReactReduxFirebaseProvider)
+    in ReactReduxFirebaseProvider (at src/index.js:30)
+    in Provider (at src/index.js:29) | ? |
 |  |  |
 |  |  |
 
