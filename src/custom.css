@@ -7,16 +7,38 @@ body {
   box-sizing: border-box;
   min-width: 200px;
   display: grid;
-  background-color: #F28482;
   padding: 20px;
 }
 
 .content {
   padding: 20px 50px;
-  background-color: mediumaquamarine;
+  width: 400px;
+  text-align: center;
+  border-radius: 10px;
+  /* background-color: mediumaquamarine; */
   margin-left: auto;
   margin-right: auto;
+  border: 3px solid black;
 }
+
+input {
+  height: 30px;
+  width: 250px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+button {
+  background-color: rgba(242, 132, 130, 0.7);
+  height: 30px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.banner-area {
+  text-align: center;
+}
+
 
 
 

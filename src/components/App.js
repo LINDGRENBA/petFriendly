@@ -7,6 +7,7 @@ import SearchControl from './SearchControl'
 import Signin from './Signin';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './../custom.css';
+import logo from './../images/logo-green.png';
 
 function App() {
   return (
