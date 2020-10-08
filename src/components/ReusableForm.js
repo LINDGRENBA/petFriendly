@@ -8,7 +8,7 @@ function ReusableForm(props){
       {/* <form onSubmit={handleNewTripFormSubmission}> */}
       <form onSubmit={props.formSubmissionHandler}>
         {/* Q1 */}
-        <label>Where are you going?</label>
+        <label for="destination">Where are you going?</label>
         <input 
           type='text'
           name='destination'
@@ -16,25 +16,25 @@ function ReusableForm(props){
           required
         />
         {/* Q2 */}
-        <label>Departure date:</label>
+        <label for="departureDate">Departure date:</label>
         <input 
           type='date'
           name='departureDate'
         />
         {/* Q3 */}
-        <label>Return date:</label>
+        <label for="returnDate">Return date:</label>
         <input 
           type='date'
           name='returnDate'
         />
         {/* Q4 */}
-        <label>Which pets are you taking?</label>
+        <label for="petName">Which pets are you taking?</label>
         <input 
           type='text'
           name='petName'
           placeholder='Gemma'
         />
-        <label>Trip Notes:</label>
+        <label for="notes">Trip Notes:</label>
         <textarea
           type='text'
           name='notes'
