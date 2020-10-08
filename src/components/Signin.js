@@ -1,5 +1,7 @@
 import React from 'react';
 import firebase from 'firebase/app';
+import {browserHistory} from 'react-router';
+
 
 function Signin() {
 
@@ -37,15 +39,17 @@ function Signin() {
     <React.Fragment>
       <h3>Register</h3>
       <form onSubmit={doSignUp}>
-        <label>Email (this will be your username)</label>
+        <label>Email </label>
         <input
           type="text"
           name="email"
+          id="email"
           placeholder="Email"/>
         <label>Password</label>
         <input
           type="password"
           name="password"
+          id="password"
           placeholder="Password"/>
           <button type="submit">Sign up</button>
       </form>
@@ -56,11 +60,13 @@ function Signin() {
         <input
           type="text"
           name="signInEmail"
+          id="signInEmail"
           placeholder="Email"/>
         <label>Password</label>
         <input
           type="password"
           name="signInPassword"
+          id="signInPassword"
           placeholder="Password"/>
           <button type="submit">Sign up</button>
       </form>
