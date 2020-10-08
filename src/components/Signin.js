@@ -1,9 +1,16 @@
 import React from 'react';
 import firebase from 'firebase/app';
-import {browserHistory} from 'react-router';
+import {useHistory} from 'react-router-dom';
 
 
 function Signin() {
+
+  const history = useHistory();
+
+  const routeChange = () => {
+    let path = "/home";
+    history.push(path);
+  }
 
   function doSignUp(event) {
     event.preventDefault();
@@ -22,6 +29,7 @@ function Signin() {
     const password = event.target.signInPassword.value;
     firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
       console.log("Successfully signed in!");
+      routeChange();
     }).catch(function(error) {
       console.log(error.message);
     });
