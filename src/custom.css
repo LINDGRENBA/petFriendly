@@ -12,7 +12,7 @@ body {
 
 .content {
   padding: 20px 50px;
-  width: 400px;
+  width: auto;
   text-align: center;
   border-radius: 10px;
   /* background-color: mediumaquamarine; */
@@ -33,6 +33,7 @@ button {
   height: 30px;
   width: auto;
   border-radius: 4px;
+  margin: auto 5px;
 }
 
 .banner-area {
