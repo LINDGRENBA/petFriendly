@@ -7,10 +7,15 @@ function Signin() {
 
   const history = useHistory();
 
-  const routeChange = () => {
+  const signInRouteChange = () => {
     let path = "/home";
     history.push(path);
   }
+
+  // const signUpRouteChange = () => {
+  //   let path = "/";
+  //   history.push(path);
+  // }
 
   function doSignUp(event) {
     event.preventDefault();
@@ -18,6 +23,7 @@ function Signin() {
     const password = event.target.password.value;
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
       console.log("Successfully signed up!");
+      window.location.reload();
     }).catch(function(error) {
       console.log(error.message);
     });
@@ -29,7 +35,7 @@ function Signin() {
     const password = event.target.signInPassword.value;
     firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
       console.log("Successfully signed in!");
-      routeChange();
+      signInRouteChange();
     }).catch(function(error) {
       console.log(error.message);
     });
