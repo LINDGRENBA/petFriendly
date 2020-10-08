@@ -6,6 +6,11 @@ import {useLoadScript} from '@react-google-maps/api';
 import PropTypes from 'prop-types';
 
 const libraries = ["places"];
+const resultsArray = [
+  {name: "Paws For A Beer", address: "501 Harris Ave, Bellingham, WA 98225", type: "Brewery" , lat: 48.7184, lng: -122.5070, description: "Bellingham's first and only dog-friendly tavern", url: "https://www.pawsforabeer.com/", id: 1},
+  {name: "Hotel Leo", type: "Lodging", lat: 48.7519, lng: -122.4787, description: "Pet Friendly hotel in the heart of downtown Bellingham", url: "https://www.thehotelleo.com/", id: 2},
+  // {name: , type: , lat: , lng: , description: , url: },
+];
 
 function SearchBox(props) {
 
