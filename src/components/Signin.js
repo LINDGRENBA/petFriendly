@@ -8,7 +8,7 @@ function Signin() {
   const history = useHistory();
 
   const routeChange = () => {
-    let path = "/";
+    let path = "/home";
     history.push(path);
   }
 

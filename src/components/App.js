@@ -16,10 +16,10 @@ function App() {
         <h2>Welcome to Pet Friendly</h2>
         <p>An app to take the stress out of traveling with your pet.</p>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/home">
             <SearchControl />
           </Route>
-          <Route exact path="/signin">
+          <Route exact path="/">
             <Signin />
           </Route>
           <Route exact path="/mytrips">
