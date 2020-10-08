@@ -6,11 +6,11 @@ import {useLoadScript} from '@react-google-maps/api';
 import PropTypes from 'prop-types';
 
 const libraries = ["places"];
-const resultsArray = [
-  {name: "Paws For A Beer", address: "501 Harris Ave, Bellingham, WA 98225", type: "Brewery" , lat: 48.7184, lng: -122.5070, description: "Bellingham's first and only dog-friendly tavern", url: "https://www.pawsforabeer.com/", id: 1},
-  {name: "Hotel Leo", type: "Lodging", lat: 48.7519, lng: -122.4787, description: "Pet Friendly hotel in the heart of downtown Bellingham", url: "https://www.thehotelleo.com/", id: 2},
-  // {name: , type: , lat: , lng: , description: , url: },
-];
+// const resultsArray = [
+//   {name: "Paws For A Beer", address: "501 Harris Ave, Bellingham, WA 98225", type: "Brewery" , lat: 48.7184, lng: -122.5070, description: "Bellingham's first and only dog-friendly tavern", url: "https://www.pawsforabeer.com/", id: 1},
+//   {name: "Hotel Leo", type: "Lodging", lat: 48.7519, lng: -122.4787, description: "Pet Friendly hotel in the heart of downtown Bellingham", url: "https://www.thehotelleo.com/", id: 2},
+//   // {name: , type: , lat: , lng: , description: , url: },
+// ];
 
 function SearchBox(props) {
 
@@ -35,18 +35,18 @@ function SearchBox(props) {
     },
   });
 
-  // FOR COMBOBOX
-  // comboboxInput value={value} gets value from usePlacesAutoComplete hook above
-  // comboboxInput onChange listens for event which is user typing something in the search box
-  // onChange setValue takes value of the event
-  // style me does not yet have any styling
-  // ComboboxOption inside of ComboboxPopover is what we're actually rendering out
-  // make onSelect async because we're going to be using promises, wrap inner code in a try/catch in case of error
-  // getGeocode, getLatLng
-  // getGeocode takes an object, which is the address, and returns many results - use await because it's a promise
-  // getLatLng extracts the longitude and latitude - also use await because also a promise
-  // setValue inside of onSelect updates state --> address - sets value in the searchbox / combobox to the value that the user selected, false - sets argument of shouldFetchData to false to indicate that we do not need to fetch data from the google maps api (cause we already know what the user selected)
-  // clearSuggestions clears the comboboxOption suggestions so that after user selects one we are no longer showing all the other options
+//   // FOR COMBOBOX
+//   // comboboxInput value={value} gets value from usePlacesAutoComplete hook above
+//   // comboboxInput onChange listens for event which is user typing something in the search box
+//   // onChange setValue takes value of the event
+//   // style me does not yet have any styling
+//   // ComboboxOption inside of ComboboxPopover is what we're actually rendering out
+//   // make onSelect async because we're going to be using promises, wrap inner code in a try/catch in case of error
+//   // getGeocode, getLatLng
+//   // getGeocode takes an object, which is the address, and returns many results - use await because it's a promise
+//   // getLatLng extracts the longitude and latitude - also use await because also a promise
+//   // setValue inside of onSelect updates state --> address - sets value in the searchbox / combobox to the value that the user selected, false - sets argument of shouldFetchData to false to indicate that we do not need to fetch data from the google maps api (cause we already know what the user selected)
+//   // clearSuggestions clears the comboboxOption suggestions so that after user selects one we are no longer showing all the other options
   return (
     <div className="styleMe"> 
       <Combobox 

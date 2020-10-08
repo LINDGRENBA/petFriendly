@@ -8,38 +8,38 @@ function ReusableForm(props){
       {/* <form onSubmit={handleNewTripFormSubmission}> */}
       <form onSubmit={props.formSubmissionHandler}>
         {/* Q1 */}
-        <label for="destination">Where are you going?</label>
+        <label for="destination"></label>
         <input 
           type='text'
           name='destination'
           placeholder='destination'  //will this work?
           required
-        />
+        /> <br/>
         {/* Q2 */}
-        <label for="departureDate">Departure date:</label>
+        <label for="departureDate"></label>
         <input 
           type='date'
           name='departureDate'
-        />
+        /><br/>
         {/* Q3 */}
-        <label for="returnDate">Return date:</label>
+        <label for="returnDate"></label>
         <input 
           type='date'
           name='returnDate'
-        />
+        /><br/>
         {/* Q4 */}
-        <label for="petName">Which pets are you taking?</label>
+        <label for="petName"></label>
         <input 
           type='text'
           name='petName'
           placeholder='Gemma'
-        />
-        <label for="notes">Trip Notes:</label>
+        /><br/>
+        <label for="notes"></label>
         <textarea
           type='text'
           name='notes'
           placeholder='Remember meds for Gemma'
-        />
+        /><br/>
         <button type="submit">{props.btnText}</button>
       </form>
     </React.Fragment>

@@ -1,17 +1,22 @@
 import React from 'react';
 import {GoogleMap, useLoadScript, Marker, InfoWindow} from '@react-google-maps/api';
 import "@reach/combobox/styles.css";
+import SearchBox from './SearchBox';
+
+// LEAVE BELOW COMMENTED OUT
 // import { render } from '@testing-library/react';
 // import { v4 } from 'uuid';
 // import usePlacesAutoComplete, {getGeocode, getLatLng} from 'use-places-autocomplete';
 // import {Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption} from '@reach/combobox';
 // should above be just - import "@reach/combobox"  ?
-import SearchBox from './SearchBox';
+// LEAVE ABOVE COMMENTED OUT
 
 const libraries = ["places"];
 const mapContainerStyle = {
   width: "50vw",
-  height: "50vh"
+  height: "50vh",
+  marginLeft: "auto",
+  marginRight: "auto"
 };
 
 const center = { // for initial purposes, set to milwaukie, OR
