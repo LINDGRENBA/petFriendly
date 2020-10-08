@@ -1,0 +1,15 @@
+header {
+  height: 10%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  text-decoration: none;
+}
+
+/* .wrapper {
+  display: flex;
+} */

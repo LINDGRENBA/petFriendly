@@ -125,6 +125,9 @@ October 6th 2020:
 2. 11:00 to 1:30 - Research use of GoogleSearch and GoogleMap API to implement into project
 3. 2:00 to 10:00 - Follow along with tutorial to integrate google maps api into project
 
+October 7th 2020:
+Regular commits made
+
 
 ## <p align = "center"> Documentation and Resources used for this project
 * **https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/react?view=aspnetcore-2.2&tabs=netcore-cli**
@@ -142,6 +145,7 @@ October 6th 2020:
   - minute 8 to 10 of video: how to add styling to map
   - minute 10: disable select map UI feature, customize map header with icon
   - minute 12: how to add event listener so user click adds icon and saves location to state
+* https://codetheweb.blog/style-a-navigation-bar-css/
 
 
 

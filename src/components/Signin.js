@@ -51,39 +51,41 @@ function Signin() {
 
   return (
     <React.Fragment>
-      <h3>Register</h3>
-      <form onSubmit={doSignUp}>
-        <label>Email </label>
-        <input
-          type="text"
-          name="email"
-          id="email"
-          placeholder="Email"/>
-        <label>Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Password"/>
-          <button type="submit">Sign up</button>
-      </form>
+      <div className="loginRegister">
+        <h3>Register</h3>
+        <form onSubmit={doSignUp}>
+          <label for="email"></label>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="Email"/> <br/>
+          <label for="password"></label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"/> <br/>
+            <button type="submit">Sign up</button>
+        </form>
 
-      <h3>Sign In</h3>
-      <form onSubmit={doSignIn}>
-        <label>Email</label>
-        <input
-          type="text"
-          name="signInEmail"
-          id="signInEmail"
-          placeholder="Email"/>
-        <label>Password</label>
-        <input
-          type="password"
-          name="signInPassword"
-          id="signInPassword"
-          placeholder="Password"/>
-          <button type="submit">Sign up</button>
-      </form>
+        <h3>Sign In</h3>
+        <form onSubmit={doSignIn}>
+          <label for="signInEmail"></label>
+          <input
+            type="text"
+            name="signInEmail"
+            id="signInEmail"
+            placeholder="Email"/> <br/>
+          <label for="signInPassword"></label>
+          <input
+            type="password"
+            name="signInPassword"
+            id="signInPassword"
+            placeholder="Password"/> <br/>
+            <button type="submit">Sign up</button>
+        </form>
+      </div>
 
       <h1>Sign Out</h1>
       <button onClick={doSignOut}>Sign out</button>

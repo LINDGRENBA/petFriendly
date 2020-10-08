@@ -13,19 +13,19 @@ function App() {
     <div className="container">
       <Router>
         <NavMenu />
-        <h2>Welcome to Pet Friendly</h2>
-        <p>An app to take the stress out of traveling with your pet.</p>
-        <Switch>
-          <Route exact path="/home">
-            <SearchControl />
-          </Route>
-          <Route exact path="/">
-            <Signin />
-          </Route>
-          <Route exact path="/mytrips">
-            <TripControl />
-          </Route>
-        </Switch>
+        <div className="content">
+          <Switch>
+            <Route exact path="/home">
+              <SearchControl />
+            </Route>
+            <Route exact path="/">
+              <Signin />
+            </Route>
+            <Route exact path="/mytrips">
+              <TripControl />
+            </Route>
+          </Switch>
+        </div>
       </Router>
     </div>
   );
