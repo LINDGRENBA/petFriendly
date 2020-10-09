@@ -4,18 +4,26 @@
 <br>
 <br>
 
+<h1 align = "center"><img width='300' height='350' src='Images/SignIn.PNG'>
+
+
 <h3 align = "center"> <u>Description</u>
 
 This app will make it easier for pet owners to travel with their pets. Searching for various pet friendly places in your travel destination can take forever. Here, we collect all of that data for you, to make planning your next vacation a smoother experience. We know you don't want to leave your loved one in a hot car or with thatno further notes at this timee not so responsible friend that you don't really trust. With Pet Friendly at your fingertips, you can stop worrying and start relaxing, with your pet by your side. 
 <br>
 <br>
 <br>
+<h1 align = "center"><img width='500' height='350' src='Images/mapautocomplete.PNG'>
 
 ## <p align = "center">  <u>**Project Proposal**</u>
 |  |  | 
 | ----- | ----- | 
 |  Target demographic  |  Pet owners, people who can't leave their pet at home, someone who has their vacation planned and finds out last minute that their friend or pet sitter can't take care of their pet for them, someone who has a family emergency and has to leave quickly with their pet. User ages most likely between 20 and up - old enough to own a pet autonomously  | 
 | What problems does this app solve  | Looking for pet friendly places takes a long timee, there are many different hotels or vacation services and some allow pets while others do not, users would have to look at each separate place individually and then use each location's filter to find a pet friendly option, then to compare prices would have to repeat that process. During a vacation, a user may not be sure if a certain shop is pet friendly or not. If a user does not have a friend or partner to stay with their pet, it may be unsafe for them to leave their pet outside, or they may not even have that option depending on the pet. Pet friendly will minimize timee and frustration spent searching for options and allow users to see if there are pet friendly businesses nearby so that they don't have to wonder whether or not they can take their pet inside with them.  |
+
+<h1 align = "center"><img width='500' height='350' src='Images/proofofconcept.PNG'>
+<h1 align = "center"><img width='300' height='350' src='Images/addtripform2.PNG'>
+<h1 align = "center"><img width='300' height='350' src='Images/tripdetails.PNG'>
 <br>
 <br>
 
@@ -52,10 +60,8 @@ This app will make it easier for pet owners to travel with their pets. Searching
 
 ### <p align = "center"> **Model**
 
-![PetFriendly Model](./wwroot/images/petfriendly-model.png)
+<h1 align = "center"><img width='300' height='450' src='Images/component-diagram.PNG'>
 
-### <p align = "center"> **Other Considerations**
-1. What type of license should I use if I want to maintain ownership of this application - look into licensing, re-read MIT license terms
 
 <br>
 <br>
@@ -79,39 +85,41 @@ This app will make it easier for pet owners to travel with their pets. Searching
     in ReduxFirestoreProvider (created by ReactReduxFirebaseProvider)
     in ReactReduxFirebaseProvider (at src/index.js:30)
     in Provider (at src/index.js:29) | update `v4()` in SearchMap component to `event.place_id` and update `id` in SearchBox component to `place_id` |
-|  |  |
-|  |  |
+
 
 ## <p align = "center">  <u>**Process and Decision Making**</u>
 1. Read Documentation, decide which version of React to use
 2. Will use React with Redux + ASP.NET Core 
 3. Create new application using `dotnet new reactredux -o Pet-Friendly`
 4. Note that documentation states project is initiated with two apps - ASP.NET Core and React. ASP.NET Core app is intended for data access, authorization and server-side concerns while React app (located in ClientApp subdirectory) is intended for all UI concerns.
-5.
+5. Decided to create initial app using only React-Redux and Firebase as am not intending to deploy at this time. 
 
-Timeline
-September 25th 2020:
-1. 8:00 am - use npx-create-react-app to set up application with gitignore and readme
-2. 8:30 am - begin to document in README
-3. 9:30 to approx 11:00 - read react documentation, read postresql documentation, watch videos on different databases to use with react, then remembered plan to use react-redux with asp.net
-4. 11:00 to noon - read documentation for react with asp.net, research project setup and use of api / authentication / etc. 
-5. 1:00 - Look at resources posted in discord. 
-6. 1:30 - Create new application (see step 3 in process and decision making) and transfer README content to new application.
-7. Read through article on react with ASP.NET Core https://www.red-gate.com/simple-talk/dotnet/asp-net/a-real-world-react-js-setup-for-asp-net-core-and-mvc5/ and then continue to follow along with react-redux with ASP.NET Core setup documentation https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/react?view=aspnetcore-2.2&tabs=netcore-cli
-8. Successfully build and run project with boilerplate web template
-9. 2:00 to 5:00 - Work on wireframe and component design with Figma
 
-October 2nd 2020:
-1. 8:00 am - re-assess MVP and Stretch goals, consider structure of website in preparation to complete Figma wireframe.
-2. 8:30 am to 11:00 - am complete Figma wireframe for project (includes MVP and some Stretch)
-3. 11:00 to 3:02 - Observe and note how auto generated files are set up to understand how project front and back end are connected
-4. 3:00 to 5:00 - research CRUD functionality with React + ASP.Net Core Web Application
+### <p align = "center"> **Timeline**
+| Date | Log |
+| ----- | ----- |
+| September 25th 2020 |  8:00 am - use npx-create-react-app to set up application with gitignore and readme <br/> 8:30 am - begin to document in README <br/> 9:30 to approx 11:00 - read react documentation, read postresql documentation, watch videos on different databases to use with react, then remembered plan to use react-redux with asp.net <br/> 11:00 to noon - read documentation for react with asp.net, research project setup and use of api / authentication / etc. <br/> 1:00 - Look at resources posted in discord. <br/> 1:30 - Create new application (see step 3 in process and decision making) and transfer README content to new application.Read through article on react with ASP.NET Core https://www.red-gate.com/simple-talk/dotnet/asp-net/a-real-world-react-js-setup-for-asp-net-core-and-mvc5/ and then continue to follow along with react-redux with ASP.NET Core setup documentation https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/react?view=aspnetcore-2.2&tabs=netcore-cli<br/> Successfully build and run project with boilerplate web template <br/> 2:00 to 5:00 - Work on wireframe and component design with Figma |
+| October 2nd 2020 | 8:00 am - re-assess MVP and Stretch goals, consider structure of website in preparation to complete Figma wireframe.<br/> 8:30 am to 11:00 - am complete Figma wireframe for project (includes MVP and some Stretch) <br/> 11:00 to 3:02 - Observe and note how auto generated files are set up to understand how project front and back end are connected <br/> 3:00 to 5:00 - research CRUD functionality with React + ASP.Net Core Web Application |
+| October 3rd 2020 | 11:30 to 12:30 - Set auto populated content on home screen to display: none, add own elements <br/> 12:30 to 12:45 - figure out how to set up custom Links, link to MyTripsControl and ProfileControl pages <br/> 1:00 to 1:15 - reconsider design to create more user friendly experience <br/> 1:15 to 1:50 - add static elements to home, mytrips and profile pages |
+| October 4th 2020| 10:50 to 2:00 - Add state to MyTrips for Add Trips form, including first adding tests for reducers <br/> TBD to 5:00 - Research and implement connecting backend to Firebase server. |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
 
-October 3rd 2020:
-1. 11:30 to 12:30 - Set auto populated content on home screen to display: none, add own elements
-2. 12:30 to 12:45 - figure out how to set up custom Links, link to MyTripsControl and ProfileControl pages
-3. 1:00 to 1:15 - reconsider design to create more user friendly experience
-4. 1:15 to 1:50 - add static elements to home, mytrips and profile pages
+
+
+
+
 
 October 4th 2020: - Get record from Capstone2 pet friendly project
 
