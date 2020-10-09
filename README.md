@@ -9,7 +9,7 @@
 
 <h3 align = "center"> <u>Description</u>
 
-This app will make it easier for pet owners to travel with their pets. Searching for various pet friendly places in your travel destination can take forever. Here, we collect all of that data for you, to make planning your next vacation a smoother experience. We know you don't want to leave your loved one in a hot car or with thatno further notes at this timee not so responsible friend that you don't really trust. With Pet Friendly at your fingertips, you can stop worrying and start relaxing, with your pet by your side. 
+If you've ever had to spend hours in front of your computer sifting through different hotel sites or sat in a car wondering if you were allowed to take your dog inside with you, you've felt the pain of traveling with your fuzzy loved one. PetFriendly's goal is to make your life easier by displaying all of the pet friendly shops, restaurants and hotels in one location, with easy to see details about each place. Wondering if you can take your pet into that ice cream shop? Check PetFriendly! Trying to find a cheese shop, bottle shop or boutique where you can take your loved one with you? Check PetFriendly! Once you're signed in (for free!) you can create trips and save future destinations or favorites to your trips so that they're all in one easy to find place in your app. You can also leave reviews and rate how pet friendly each location was, to make it easier for future travelers to decide where they want to go. Try PetFriendly today so that you can stop stressing and start relaxing with your pet!
 <br>
 <br>
 <br>
