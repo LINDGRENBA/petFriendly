@@ -54,13 +54,13 @@ function Signin() {
       <div className="loginRegister">
         <h3>Register</h3>
         <form onSubmit={doSignUp}>
-          <label for="email"></label>
+          <label htmlFor="email"></label>
           <input
             type="text"
             name="email"
             id="email"
             placeholder="Email"/> <br/>
-          <label for="password"></label>
+          <label htmlFor="password"></label>
           <input
             type="password"
             name="password"
@@ -71,7 +71,7 @@ function Signin() {
 
         <h3>Sign In</h3>
         <form onSubmit={doSignIn}>
-          <label for="signInEmail"></label>
+          <label htmlFor="signInEmail"></label>
           <input
             type="text"
             name="signInEmail"
