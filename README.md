@@ -62,6 +62,70 @@ This app will make it easier for pet owners to travel with their pets. Searching
 
 <h1 align = "center"><img width='300' height='450' src='Images/component-diagram.PNG'>
 
+## <p align = "center">  <u>**Set Up on Your Local Machine**</u>
+1. Clone project from github using the green `Code` button on the [project github page](https://github.com/LINDGRENBA/petFriendly)
+2. Open in an IDE / Text Editor such as Visual Studio Code
+3. Open the terminal. In Visual Studio Code you can do this by selecting `terminal` at the top of the IDE, then selecting `New Terminal` OR by entering `ctrl + shift + ~` on the keyboard.
+4. Check that you are in the main directory by typing `pwd` and hitting `Enter`. The file path should look like this `/c/Users/blindgren/Desktop/EPICODUS/Full Time Bootcamp/Capstone3/pet-friendly`. If you are not in the main directory, navigate to main directory by typing `cd Pet-Friendly` in the terminal and hitting `Enter`.
+5. Enter the following commands, in order to install, build and run the application :
+* `npm install`  (This command is only necessary the first time you open the project on your computer. It may take several minutes for the install to complete - this is normal)
+* `npm start` - in order for the project to start and function properly, you will need to set up a Firebase database, add your credentials and use a Google Maps API. The steps directly below will walk you through this process.
+
+## <p align = "center">  <u>**Set Up a Firebase Database**</u>
+You will need to set up a database in order for this project to run on your local machine. Follow the steps below.
+1. Go to the [Firebase site](https://firebase.google.com/), click on `Get Started` and follow the steps to log into a Google account or create a Google account if you do not already have one.
+2. After creating an account you should be directed to the Firebase console. If you have not been directed to the console, select the `Go to Console` link in the upper right. Now you'll create a project with the following steps.
+  * Select `Create a Project` and enter `PetFriendly` as the project name, then click the `Continue` button.
+  * Deselect the option to add Google Analytics to the project.
+  * Once the project is created and you are redirected, select the `</>` button on the page.
+  <p align = "center"><img width='300' height='200' src='Images/firebase-signup1.PNG'>
+
+  * Enter a nickname for your project (this can be the same as the name you originally chose for the project) and click `Register App`.
+  * You will see a list of credentials. The part that you will need is the following, but with your personal unique credentials as the values on the right. 
+  ```
+      apiKey: "YOUR-UNIQUE-CREDENTIALS",
+      authDomain: "YOUR-PROJECT-NAME.firebaseapp.com",
+      databaseURL: "https://YOUR-PROJECT-NAME.firebaseio.com",
+      projectId: "YOUR-UNIQUE-PROJECT-NAME",
+      storageBucket: "YOUR-UNIQUE-URL",
+      messagingSenderId: "YOUR-UNIQUE-CREDENTIALS",
+      appId: "YOUR-UNIQUE-APPID"
+  ```
+    
+  You will be able to access this information later from the console, but if you'd like, you can copy this information now and save it in a safe space. Do not publish this information where others can see. It is important to keep this information private.
+  * Navigate to your project console. It will look something like this.
+  <p align = "center"><img width='300' height='200' src='Images/firebase-signup2.PNG'>
+
+  * Click on `Cloud Firestore` in the lefthand pane. You will see the following
+  <p align = "center"><img width='300' height='200' src='Images/firebase-signup3.PNG'>
+
+  Select `Start in test mode` and click `Next`.
+  * Note that after thirty days, the automatically set rules will expire and at that point you will need so update the rules for this project if you are still using it.
+  <p align = "center"><img width='300' height='200' src='Images/firebase-signup4.PNG'>
+
+3. Now we will add your personal credentials (set by Firebase in the above steps) to the project. Follow the steps below.
+* add a .env file to the root of your folder (the top directory). The filename should appear greyed out. This indicates that it will be visible only to you. Do not share your personal credentials.
+<p align = "center"><img width='200' height='150' src='Images/env-file.PNG'>
+
+* add your credentials to the .env file, see below (replace the value between the " " with your credential values)
+```
+REACT_APP_FIREBASE_API_KEY = "YOUR-UNIQUE-CREDENTIALS"
+REACT_APP_FIREBASE_AUTH_DOMAIN = "YOUR-PROJECT-NAME.firebaseapp.com"
+REACT_APP_FIREBASE_DATABASE_URL = "https://YOUR-PROJECT-NAME.firebaseio.com"
+REACT_APP_FIREBASE_PROJECT_ID = "YOUR-PROJECT-FIREBASE-PROJECT-ID"
+REACT_APP_FIREBASE_STORAGE_BUCKET = "YOUR-PROJECT-NAME.appspot.com"
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID = "YOUR-PROJECT-SENDER-ID"
+REACT_APP_FIREBASE_APP_ID = "YOUR-PROJECT-APP-ID"
+```
+
+It is very important that you follow the `REACT_APP_FIREBASE...` format and naming convention as these are the variables that the rest of the application will look for in order to run.
+<br>
+<hr>
+
+## <p align = "center">  <u>**Obtaining a Google Maps API key**</u>
+
+
+REACT_APP_GOOGLE_MAPS_API_KEY =
 
 <br>
 <br>
@@ -102,39 +166,9 @@ This app will make it easier for pet owners to travel with their pets. Searching
 | October 2nd 2020 | 8:00 am - re-assess MVP and Stretch goals, consider structure of website in preparation to complete Figma wireframe.<br/> 8:30 am to 11:00 - am complete Figma wireframe for project (includes MVP and some Stretch) <br/> 11:00 to 3:02 - Observe and note how auto generated files are set up to understand how project front and back end are connected <br/> 3:00 to 5:00 - research CRUD functionality with React + ASP.Net Core Web Application |
 | October 3rd 2020 | 11:30 to 12:30 - Set auto populated content on home screen to display: none, add own elements <br/> 12:30 to 12:45 - figure out how to set up custom Links, link to MyTripsControl and ProfileControl pages <br/> 1:00 to 1:15 - reconsider design to create more user friendly experience <br/> 1:15 to 1:50 - add static elements to home, mytrips and profile pages |
 | October 4th 2020| 10:50 to 2:00 - Add state to MyTrips for Add Trips form, including first adding tests for reducers <br/> TBD to 5:00 - Research and implement connecting backend to Firebase server. |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-
-
-
-
-
-
-October 4th 2020: - Get record from Capstone2 pet friendly project
-
-October 5th 2020: 
-1. 8:40 - Start new project using simple create-react-app command
-2. 8:40 to 10:00 - Set up new project
-3. All day - Create project with react, integrate redux, test and add firebase
-
-October 6th 2020: 
-1. 9:30 to 11:00 - Add client side routing to project
-2. 11:00 to 1:30 - Research use of GoogleSearch and GoogleMap API to implement into project
-3. 2:00 to 10:00 - Follow along with tutorial to integrate google maps api into project
-
-October 7th 2020:
-Regular commits made
+| October 5th 2020 | 8:40 - Start new project using simple create-react-app command <br/> 8:40 to 10:00 - Set up new project <br/> All day - Create project with react, integrate redux, test and add firebase |
+| October 6th 2020 | 9:30 to 11:00 - Add client side routing to project <br/> 11:00 to 1:30 - Research use of GoogleSearch and GoogleMap API to implement into project <br/> 2:00 to 10:00 - Follow along with tutorial to integrate google maps api into project |
+| October 7th 2020 | Regular commits made from this point on |
 
 
 ## <p align = "center"> Documentation and Resources used for this project
@@ -154,36 +188,6 @@ Regular commits made
   - minute 10: disable select map UI feature, customize map header with icon
   - minute 12: how to add event listener so user click adds icon and saves location to state
 * https://codetheweb.blog/style-a-navigation-bar-css/
-
-
-
-## <p align = "center">  <u>**Set Up on Your Local Machine**</u>
-1. Clone project from github
-2. Open in IDE / Text Editor
-3. Open terminal
-4. Check that you are in the main directory, file path should end with `Capstone/Pet-Friendly`. If you are not in the main directory, navigate to main directory with `cd Pet-Friendly`
-5. Enter the following commands, in order to install, build and run the application :
-* `npm install`  (This command is only necessary the first time you open the project on your computer. It may take several minutes for the install to complete - this is normal)
-* `dotnet build` 
-* `dotnet run`
-
-## <p align = "center">  <u>**Set Up a Database**</u>
-1. Sign up for Firebase
-2. Create a Firebase project and database 
-3. add a .env file to the root of your folder
-4. add your credentials to the .env file, see below (replace the value between the " " with your credential values)
-```
-REACT_APP_FIREBASE_API_KEY = "YOUR-UNIQUE-CREDENTIALS"
-REACT_APP_FIREBASE_AUTH_DOMAIN = "YOUR-PROJECT-NAME.firebaseapp.com"
-REACT_APP_FIREBASE_DATABASE_URL = "https://YOUR-PROJECT-NAME.firebaseio.com"
-REACT_APP_FIREBASE_PROJECT_ID = "YOUR-PROJECT-FIREBASE-PROJECT-ID"
-REACT_APP_FIREBASE_STORAGE_BUCKET = "YOUR-PROJECT-NAME.appspot.com"
-REACT_APP_FIREBASE_MESSAGING_SENDER_ID = "YOUR-PROJECT-SENDER-ID"
-REACT_APP_FIREBASE_APP_ID = "YOUR-PROJECT-APP-ID"
-```
-THIS SHOULD BE MORE DETAILED, UPDATE THIS
-<br>
-<hr>
 
 
 ### Technologies used for this project
