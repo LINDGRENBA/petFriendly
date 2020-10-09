@@ -62,6 +62,16 @@ If you've ever had to spend hours in front of your computer sifting through diff
 
 <h1 align = "center"><img width='300' height='450' src='Images/component-diagram.png'>
 
+### Attributes for Figma Component Model above
+1. For airplane vector icon 
+* Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+2. For dog image
+* <span>Photo by <a href="https://unsplash.com/@ben_wong_31?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Benjamin Wong</a> on <a href="https://unsplash.com/s/photos/pets-travel?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+3. Search icon
+* Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>  
+<br/>
+<br/>
+
 ## <p align = "center">  <u>**Set Up on Your Local Machine**</u>
 1. Clone project from github using the green `Code` button on the [project github page](https://github.com/LINDGRENBA/petFriendly)
 2. Open in an IDE / Text Editor such as Visual Studio Code
@@ -198,27 +208,17 @@ You should now be able to use all features of the app.
 * Figma - design planning
 * React with Redux
 * ASP.NET Core
-* TypeScript
-* 
-* 
-* 
-
-### Attributes that need to be included
-1. For airplane vector icon 
-* Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-2. For dog image
-* <span>Photo by <a href="https://unsplash.com/@ben_wong_31?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Benjamin Wong</a> on <a href="https://unsplash.com/s/photos/pets-travel?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-3. Search icon
-* Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+* Firestore / Firebase Database
+* Google Maps, Google Places and GeoCode API
+* npm
 
 
 ### License
 This site is licensed under the MIT license
 Copyright (c) 2020 Brittany A Lindgren
 
-
-
-
+<br/>
+<br/>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
