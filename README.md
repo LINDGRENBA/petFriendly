@@ -124,8 +124,20 @@ It is very important that you follow the `REACT_APP_FIREBASE...` format and nami
 
 ## <p align = "center">  <u>**Obtaining a Google Maps API key**</u>
 
+In order to use the Google Maps feature, you will need an API key. Do not share your API key with anyone. The google maps platform has excellent documentation that will walk you through setting up an account and obtaining a key. 
+1. [Getting started with Google Maps Platform](https://developers.google.com/maps/gmp-get-started) will walk you through setting up an account.
+2. [Get an API Key](https://developers.google.com/maps/documentation/javascript/get-api-key) will walk you through setting up a project (you can name your project whatever you like - I've named mine PetFriendly) and obtaining a key.
 
-REACT_APP_GOOGLE_MAPS_API_KEY =
+To use all map features you will need to enable three APIs for your projecT: Maps JavaScript API, Places API and the Geocoding API.
+<p align = "center"><img width='400' height='200' src='Images/enable-api.PNG'>
+
+
+3. Once you have enabled all three APIs for your API key, add the following to the .env file you set up in the previous section. You can add it below your Firebase credentials.
+
+```
+REACT_APP_GOOGLE_MAPS_API_KEY = "YOUR-GOOGLE-MAPS-API-HERE"
+```
+You should now be able to use all features of the app.
 
 <br>
 <br>
