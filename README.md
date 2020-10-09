@@ -60,7 +60,7 @@ If you've ever had to spend hours in front of your computer sifting through diff
 
 ### <p align = "center"> **Model**
 
-<h1 align = "center"><img width='300' height='450' src='Images/component-diagram.PNG'>
+<h1 align = "center"><img width='300' height='450' src='Images/component-diagram.png'>
 
 ## <p align = "center">  <u>**Set Up on Your Local Machine**</u>
 1. Clone project from github using the green `Code` button on the [project github page](https://github.com/LINDGRENBA/petFriendly)
