@@ -159,7 +159,9 @@ You should now be able to use all features of the app.
 | Service: This API project is not authorized to use this API.  For more information on authentication and Google Maps JavaScript API services | Enable Geocoding API in PetFriendly google projects platform |
 | Each child in a list should have a unique "key" prop. Check the render method of `SearchBox`. See https://fb.me/react-warning-keys for more information. `in ComboboxOption (at SearchBox.js:68), in SearchBox (at SearchMap.js:69), in div (at SearchMap.js:67), in Search (at SearchControl.js:20), in SearchControl (at App.js:18), in Route (at App.js:17), in Switch (at App.js:16), in Router (created by BrowserRouter), in BrowserRouter (at App.js:12), in App (at src/index.js:31), in ReduxFirestoreProvider (created by ReactReduxFirebaseProvider), in ReactReduxFirebaseProvider (at src/index.js:30), in Provider (at src/index.js:29)`   | update `v4()` in SearchMap component to `event.place_id` and update `id` in SearchBox component to `place_id` |
 
-
+### <p align = "center"> **Planned Improvements**
+1. Refactor CSS to use styled components as opposed to inline styling
+2. Update UI/UX and styling
 
 
 ## <p align = "center">  <u>**Process and Decision Making**</u>
